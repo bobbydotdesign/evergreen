@@ -1,0 +1,46 @@
+/*
+ * Evergreen Brand Layer
+ *
+ * This file contains brand-specific overrides for the Evergreen site.
+ * It does NOT modify shadcn/ui, Tailwind, or any framework defaults.
+ * It applies Evergreen's visual identity on top of the base design system.
+ *
+ * When cloning Evergreen as a template for a new project:
+ * - Delete this file
+ * - Remove the import from globals.css
+ * - You'll have a clean shadcn/ui + Tailwind setup with no brand opinions
+ */
+
+/* ---- Typography ---- */
+
+/* Smooth transitions on interactive elements */
+a, button {
+  transition: all 0.3s ease-out;
+}
+
+/* ---- Sharp Corners ---- */
+
+/* Evergreen uses sharp corners as a brand choice.
+   Remove this section to restore default shadcn radius. */
+[data-slot="button"],
+[data-slot="card"],
+[data-slot="badge"],
+[data-slot="input"],
+[data-slot="textarea"],
+[data-slot="dialog"],
+[data-slot="sheet-content"] {
+  border-radius: 0 !important;
+}
+
+/* ---- Accent Color ---- */
+
+/* Evergreen's chartreuse accent — used on the hero headline.
+   Available as a utility via the CSS variable. */
+:root {
+  --color-evergreen: #EAFC4E;
+}
+
+/* ---- Code Blocks ---- */
+
+/* Terminal-style code blocks keep rounded corners
+   as a deliberate contrast to the sharp UI. */

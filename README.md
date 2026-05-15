@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Evergreen
 
-## Getting Started
+A starter kit for agentic product design. Built for product designers who use Claude Code to go from idea to deployed prototype.
 
-First, run the development server:
+## What's Inside
+
+- **Next.js + TypeScript** — App Router, server components by default
+- **Tailwind CSS v4 + shadcn/ui** — Complete design system with light/dark mode
+- **Geist Font** — Clean, modern typography from Vercel
+- **Claude Code Skills** — Built-in commands for your design workflow
+- **Figma MCP Support** — Bidirectional design-to-code workflow
+
+## Quick Start
 
 ```bash
+# Clone the template
+git clone https://github.com/bobbydotdesign/evergreen.git my-project
+cd my-project
+
+# Install dependencies
+npm install
+
+# Start the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open Claude Code and start building
+claude
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Skills
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+These skills are available in Claude Code when working in this project:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Skill | What it does |
+|-------|-------------|
+| `/prd` | Generate a product requirements document from an idea |
+| `/research` | Competitive analysis and market research |
+| `/design` | Create and refine UI components and pages |
+| `/wireframe` | Rapid low-fi interactive prototypes |
+| `/ship` | Deploy to Vercel and set up feedback collection |
 
-## Learn More
+## Recommended Workflow
 
-To learn more about Next.js, take a look at the following resources:
+1. **Define** — Run `/prd` to create a product requirements doc
+2. **Research** — Run `/research` to validate your assumptions
+3. **Prototype** — Run `/wireframe` to quickly build interactive screens
+4. **Refine** — Run `/design` to polish components and layouts
+5. **Ship** — Run `/ship` to deploy to Vercel and collect feedback
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Figma Integration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+If you have Figma MCP configured, you can:
+- Pull designs from Figma and translate them to code
+- Push component mappings back to Figma
+- Use Figma as your source of truth while Claude Code builds the implementation
 
-## Deploy on Vercel
+## Design System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project includes a full design system via shadcn/ui:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Colors** — Semantic tokens (primary, secondary, muted, accent, destructive) with light/dark mode
+- **Typography** — Geist Sans for UI, Geist Mono for code
+- **Components** — Button, Card, Input, Textarea, Badge, Tabs, Dialog, Sheet, Separator, Skeleton
+- **Spacing & Radius** — Consistent scale via CSS variables
+
+Add more shadcn components anytime:
+
+```bash
+npx shadcn@latest add [component-name]
+```
+
+## Project Structure
+
+```
+src/
+  app/                 <- Pages and layouts
+  components/
+    ui/                <- shadcn/ui components
+    wireframe/         <- Wireframe components (from /wireframe)
+  lib/
+    utils.ts           <- Utilities (cn helper)
+docs/
+  prd.md               <- PRD (from /prd)
+  research.md          <- Research (from /research)
+.claude/
+  skills/              <- Claude Code skills
+```
+
+## Contributing
+
+Contributions welcome! This is an open-source tool for the design community. Feel free to:
+- Add new skills
+- Improve existing ones
+- Suggest workflow improvements
+- Share how you use it
+
+## License
+
+MIT
