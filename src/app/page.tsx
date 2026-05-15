@@ -84,7 +84,7 @@ export default function Home() {
           <p className="animate-in mb-8 text-xs font-medium tracking-widest text-muted-foreground uppercase">
             Agentic Design Framework
           </p>
-          <h1 className="animate-in-up text-8xl font-black tracking-tighter text-[var(--color-evergreen)] uppercase sm:text-9xl lg:text-[16rem] lg:leading-[0.8]">
+          <h1 className="animate-in-up text-[15vw] font-black tracking-tighter text-[var(--color-evergreen)] uppercase leading-[0.85] sm:text-9xl lg:text-[16rem] lg:leading-[0.8]">
             Evergreen
           </h1>
           <p className="animate-in delay-200 mt-8 max-w-lg text-lg font-extralight leading-relaxed text-muted-foreground">
