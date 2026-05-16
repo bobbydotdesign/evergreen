@@ -109,8 +109,8 @@ export default function Home() {
           <h1 className="animate-in-up w-full font-black tracking-tighter text-[var(--color-evergreen)] uppercase leading-[0.85] text-[clamp(3rem,12cqw,16rem)]">
             Evergreen
           </h1>
-          <p className="animate-in delay-200 mt-6 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-            An agentic design framework for product designers who use{" "}
+          <p className="animate-in delay-200 mt-6 max-w-xs text-base leading-relaxed text-muted-foreground text-pretty sm:text-lg">
+            An opinionated agentic design framework for product designers who use{" "}
             <a
               href="https://docs.anthropic.com/en/docs/claude-code"
               target="_blank"

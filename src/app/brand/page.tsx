@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { buttonVariants } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Brand",
@@ -7,18 +8,10 @@ export const metadata: Metadata = {
 const colorTokens = [
   { name: "background", var: "--background", desc: "Page background" },
   { name: "foreground", var: "--foreground", desc: "Primary text" },
-  { name: "primary", var: "--primary", desc: "Buttons, active states" },
-  { name: "primary-foreground", var: "--primary-foreground", desc: "Text on primary" },
-  { name: "secondary", var: "--secondary", desc: "Secondary surfaces" },
-  { name: "secondary-foreground", var: "--secondary-foreground", desc: "Text on secondary" },
-  { name: "muted", var: "--muted", desc: "Subtle backgrounds" },
+  { name: "muted", var: "--muted", desc: "Subtle backgrounds, sections" },
   { name: "muted-foreground", var: "--muted-foreground", desc: "Secondary text" },
-  { name: "accent", var: "--accent", desc: "Highlights, hover" },
-  { name: "accent-foreground", var: "--accent-foreground", desc: "Text on accent" },
-  { name: "destructive", var: "--destructive", desc: "Errors, danger" },
   { name: "border", var: "--border", desc: "Borders, dividers" },
-  { name: "input", var: "--input", desc: "Input borders" },
-  { name: "ring", var: "--ring", desc: "Focus rings" },
+  { name: "primary", var: "--primary", desc: "Buttons, active states" },
 ];
 
 const typeScale = [
@@ -50,13 +43,41 @@ export default function BrandPage() {
         <p className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">
           Design System
         </p>
-        <h1 className="text-2xl font-black tracking-tighter uppercase sm:text-3xl lg:text-4xl">
-          Brand
+        <h1 className="text-2xl font-black tracking-tighter uppercase text-evergreen sm:text-3xl lg:text-4xl">
+          The Evergreen Brand
         </h1>
-        <p className="mt-3 max-w-lg text-sm text-muted-foreground">
+        <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
           The visual foundation for Evergreen. Colors, typography, spacing, and component
           conventions used across the site.
         </p>
+      </section>
+
+      {/* Brand Mark */}
+      <section className="border-t border-border bg-muted/30 px-6 py-16 sm:px-10 sm:py-20 lg:px-20">
+        <p className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">
+          Identity
+        </p>
+        <h2 className="text-2xl font-black tracking-tighter uppercase sm:text-3xl">
+          Brand Mark
+        </h2>
+        <p className="mt-3 mb-10 text-sm text-muted-foreground">
+          The Evergreen mark is a geometric chevron rendered in the brand accent color.
+          Use it at a minimum size of 24px. Always maintain clear space equal to the mark height around it.
+        </p>
+
+        {/* Mark treatments */}
+        <div className="grid gap-6 sm:grid-cols-2">
+          {/* Default */}
+          <div className="relative flex aspect-square items-center justify-center border border-border bg-background p-10">
+            <img src="/evergreen.svg" alt="Evergreen mark" className="h-16 w-auto" />
+            <p className="absolute right-4 bottom-4 text-xs text-muted-foreground">Default</p>
+          </div>
+          {/* Minimum size */}
+          <div className="relative flex aspect-square items-center justify-center border border-border bg-background p-10">
+            <img src="/evergreen.svg" alt="Evergreen mark minimum size" className="h-6 w-auto" />
+            <p className="absolute right-4 bottom-4 text-xs text-muted-foreground">Min 24px</p>
+          </div>
+        </div>
       </section>
 
       {/* Colors */}
@@ -71,6 +92,20 @@ export default function BrandPage() {
           Semantic color tokens from <code className="bg-muted px-1.5 py-0.5 font-mono text-xs">globals.css</code>. All
           colors use oklch and support light/dark mode.
         </p>
+        {/* Accent */}
+        <div className="mb-8 flex items-center gap-4 border border-border p-4">
+          <div
+            className="size-10 shrink-0 border border-border"
+            style={{ backgroundColor: "var(--color-evergreen)" }}
+          />
+          <div>
+            <p className="text-sm font-medium">ever green</p>
+            <p className="text-xs text-muted-foreground">
+              Brand accent — <code className="bg-muted px-1 py-0.5 font-mono text-xs">#EAFC4E</code> — hero headline, logo
+            </p>
+          </div>
+        </div>
+
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {colorTokens.map((token) => (
             <div key={token.name} className="flex items-center gap-3 border border-border p-3">
@@ -84,20 +119,6 @@ export default function BrandPage() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Accent */}
-        <div className="mt-8 flex items-center gap-4 border border-border p-4">
-          <div
-            className="size-10 shrink-0 border border-border"
-            style={{ backgroundColor: "var(--color-evergreen)" }}
-          />
-          <div>
-            <p className="text-sm font-medium">evergreen</p>
-            <p className="text-xs text-muted-foreground">
-              Brand accent — <code className="bg-muted px-1 py-0.5 font-mono text-xs">#EAFC4E</code> — hero headline, logo
-            </p>
-          </div>
         </div>
       </section>
 
@@ -121,6 +142,65 @@ export default function BrandPage() {
               <p className={level.className}>{level.sample}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Buttons & Links */}
+      <section className="border-t border-border px-6 py-16 sm:px-10 sm:py-20 lg:px-20">
+        <p className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">
+          Interactive
+        </p>
+        <h2 className="text-2xl font-black tracking-tighter uppercase sm:text-3xl">
+          Buttons & Links
+        </h2>
+        <p className="mt-3 mb-10 text-sm text-muted-foreground">
+          Sharp corners (brand override). All transitions ease-out at 300ms.
+        </p>
+
+        {/* Button variants */}
+        <div className="mb-10">
+          <p className="mb-4 text-xs font-medium tracking-widest text-muted-foreground uppercase">
+            Button Variants
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <a className={buttonVariants({ variant: "default" })}>Default</a>
+            <a className={buttonVariants({ variant: "secondary" })}>Secondary</a>
+            <a className={buttonVariants({ variant: "outline" })}>Outline</a>
+            <a className={buttonVariants({ variant: "ghost" })}>Ghost</a>
+            <a className={buttonVariants({ variant: "destructive" })}>Destructive</a>
+            <a className={buttonVariants({ variant: "link" })}>Link variant</a>
+          </div>
+        </div>
+
+        {/* Button sizes */}
+        <div className="mb-10">
+          <p className="mb-4 text-xs font-medium tracking-widest text-muted-foreground uppercase">
+            Button Sizes
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <a className={buttonVariants({ size: "xs" })}>Extra Small</a>
+            <a className={buttonVariants({ size: "sm" })}>Small</a>
+            <a className={buttonVariants({ size: "default" })}>Default</a>
+            <a className={buttonVariants({ size: "lg" })}>Large</a>
+          </div>
+        </div>
+
+        {/* Link styles */}
+        <div>
+          <p className="mb-4 text-xs font-medium tracking-widest text-muted-foreground uppercase">
+            Link Styles
+          </p>
+          <div className="flex flex-wrap items-center gap-6 text-sm">
+            <a href="#" className="text-foreground underline underline-offset-4">
+              Inline link
+            </a>
+            <a href="#" className="text-muted-foreground transition-colors duration-300 hover:text-foreground">
+              Muted link
+            </a>
+            <a href="#" className="underline underline-offset-4 transition-colors duration-300 hover:text-foreground">
+              Hover link
+            </a>
+          </div>
         </div>
       </section>
 
