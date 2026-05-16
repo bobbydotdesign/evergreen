@@ -72,7 +72,7 @@ export default function Workflow() {
             className="no-underline group flex gap-5 border-b border-border py-6 transition-colors last:border-0 hover:bg-muted/50 -mx-4 px-4"
           >
             <div className="flex flex-col items-center gap-2">
-              <span className="flex size-8 shrink-0 items-center justify-center rounded-none bg-foreground font-mono text-sm font-medium text-background">
+              <span className="shrink-0 pt-0.5 font-mono text-sm font-bold text-foreground">
                 {i + 1}
               </span>
               {i < steps.length - 1 && (

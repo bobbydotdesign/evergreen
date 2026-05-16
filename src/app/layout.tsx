@@ -62,8 +62,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex">
         {/* Logo */}
-        <a href="/" className="fixed top-6 right-6 z-50 transition-all duration-300 hover:scale-110 sm:top-8 sm:right-10 lg:right-10">
-          <img src="/evergreen.svg" alt="Evergreen" className="h-5 w-auto sm:h-6" />
+        {/* Logo — desktop only (mobile logo is in the header bar) */}
+        <a href="/" className="fixed top-8 right-10 z-50 hidden transition-all duration-300 hover:scale-110 lg:block">
+          <img src="/evergreen.svg" alt="Evergreen" className="h-6 w-auto" />
         </a>
 
         {/* Desktop sidebar */}
@@ -72,11 +73,11 @@ export default function RootLayout({
         </aside>
 
         {/* Mobile header */}
-        <div className="fixed inset-x-0 top-0 z-40 flex items-center border-b border-border bg-background px-4 py-3 lg:hidden">
+        <div className="fixed inset-x-0 top-0 z-40 flex items-center justify-between border-b border-border bg-background px-4 py-3 lg:hidden">
           <MobileSidebar />
-          <span className="ml-3 font-mono text-xs text-muted-foreground">
-            Evergreen
-          </span>
+          <a href="/" className="mr-1">
+            <img src="/evergreen.svg" alt="Evergreen" className="h-5 w-auto" />
+          </a>
         </div>
 
         {/* Main content */}

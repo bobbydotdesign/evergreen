@@ -20,12 +20,12 @@ export function CodeBlock({
 
   return (
     <div className={cn("relative overflow-hidden rounded-lg", className)}>
-      <pre className="whitespace-pre-wrap break-words rounded-lg bg-black px-4 py-3 pr-12 font-mono text-sm leading-relaxed text-neutral-300">
+      <pre className="overflow-x-auto whitespace-pre rounded-lg bg-black px-4 py-3 font-mono text-sm leading-relaxed text-neutral-300">
         <code>{children}</code>
       </pre>
       <button
         onClick={copy}
-        className="absolute right-2 top-2 flex size-8 items-center justify-center rounded-md bg-white/10 text-neutral-500 transition-colors hover:bg-white/20 hover:text-neutral-300"
+        className="absolute right-2 top-2 flex size-8 items-center justify-center rounded-md bg-black/80 text-neutral-500 transition-colors hover:bg-white/20 hover:text-neutral-300"
         aria-label={copied ? "Copied" : "Copy to clipboard"}
       >
         {copied ? (
