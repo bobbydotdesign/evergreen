@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://evergreen.dev";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://getever.green";
 const description =
   "An agentic design framework. Go from idea to deployed prototype using Claude Code, shadcn/ui, and Vercel.";
 
