@@ -1,11 +1,7 @@
-# /design-system — Design System Configuration
-
-## Description
-Set up or modify the project's design system: colors, typography, spacing, radius, and component conventions.
-
-## Instructions
-
-When the user invokes `/design-system`, they want to configure the visual foundation of the project.
+---
+description: Set up or modify the design system — colors, typography, spacing, radius, and component conventions. Use when the user wants to change colors, fonts, theme, or audit design consistency.
+argument-hint: "[setup | colors | typography | audit | export]"
+---
 
 ### Modes
 

@@ -1,11 +1,7 @@
-# /figma — Figma Integration
-
-## Description
-Pull designs from Figma, extract tokens, translate to code, and sync component mappings.
-
-## Instructions
-
-When the user invokes `/figma`, they want to work between Figma and code. This skill uses the Figma MCP tools.
+---
+description: Pull designs from Figma, extract tokens, translate to code, and sync component mappings. Use when the user wants to work with Figma files, inspect designs, or sync components.
+argument-hint: "[inspect | build | sync | variables] [url]"
+---
 
 ### Modes
 
@@ -50,5 +46,3 @@ When the user invokes `/figma`, they want to work between Figma and code. This s
 - `mcp__figma__send_code_connect_mappings` — push mappings to Figma
 - `mcp__figma__get_variable_defs` — pull Figma variables
 - `mcp__figma__get_figjam` — pull FigJam board content
-- `mcp__figma__add_code_connect_map` — add a single code connect mapping
-- `mcp__figma__get_code_connect_map` — get existing mappings

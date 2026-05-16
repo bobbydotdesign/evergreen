@@ -46,32 +46,54 @@ const skills = [
   },
 ];
 
-const steps = [
+const newProjectSteps = [
   {
-    title: "Clone and install",
-    description: "Clone the repo and install dependencies.",
-    code: "git clone https://github.com/bobbydotdesign/evergreen.git my-project\ncd my-project\nnpm install",
+    title: "Clone the repo",
+    description: "This creates a new folder with the project files.",
+    code: "git clone https://github.com/bobbydotdesign/evergreen.git my-project",
   },
   {
-    title: "Start the dev server",
-    description: "Launch a local preview of your project.",
-    code: "npm run dev",
+    title: "Open the project folder",
+    description: "Skip this if you're already there.",
+    code: "cd my-project",
+  },
+  {
+    title: "Install dependencies",
+    description: "This installs everything the project needs to run.",
+    code: "npm install",
+  },
+  {
+    title: "Start Claude Code",
+    description: "You may be asked to trust the project folder — select \"Yes, I trust this folder\" to continue. Claude Code can start the dev server for you when you're ready to preview.",
+    code: "claude",
+  },
+  {
+    title: "Start building",
+    description: "Describe your idea and Claude generates a full PRD, then prototype it.",
+    code: "/prd",
+  },
+];
+
+const existingProjectSteps = [
+  {
+    title: "Clone Evergreen temporarily",
+    description: "Pull down the skills and configuration files.",
+    code: "git clone https://github.com/bobbydotdesign/evergreen.git /tmp/evergreen",
+  },
+  {
+    title: "Copy the skills into your project",
+    description: "Add the Claude Code skills and project instructions to your codebase.",
+    code: "cp -r /tmp/evergreen/.claude .claude\ncp /tmp/evergreen/CLAUDE.md CLAUDE.md",
+  },
+  {
+    title: "Clean up",
+    description: "Remove the temporary clone.",
+    code: "rm -rf /tmp/evergreen",
   },
   {
     title: "Open Claude Code",
-    description: "In a new terminal tab, start Claude Code in your project.",
-    code: "cd my-project\nclaude",
-  },
-  {
-    title: "Define your product",
-    description: "Describe your idea and Claude generates a full PRD.",
-    code: "/prd",
-  },
-  {
-    title: "Start prototyping",
-    description:
-      "Claude reads your PRD and builds interactive wireframes you can preview in the browser.",
-    code: "/wireframe",
+    description: "Start Claude Code in your project. The skills are ready to use.",
+    code: "claude",
   },
 ];
 
@@ -88,8 +110,16 @@ export default function Home() {
             Evergreen
           </h1>
           <p className="animate-in delay-200 mt-8 max-w-lg text-lg font-extralight leading-relaxed text-muted-foreground">
-            An agentic design framework. Go from idea to deployed
-            prototype using Claude Code, shadcn/ui, and Vercel.
+            An agentic design framework for product designers who use{" "}
+            <a
+              href="https://docs.anthropic.com/en/docs/claude-code"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground underline underline-offset-4"
+            >
+              Claude Code
+            </a>
+            . Focus on your work, not the setup.
           </p>
 
         </div>
@@ -105,20 +135,11 @@ export default function Home() {
             <p className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">
               Quick Start
             </p>
-            <h2 className="text-5xl font-black tracking-tighter uppercase sm:text-7xl lg:text-8xl">
+            <h2 className="text-3xl font-black tracking-tighter uppercase sm:text-4xl lg:text-5xl">
               Up and running in minutes
             </h2>
             <p className="mt-4 text-sm text-muted-foreground">
-              You&apos;ll need{" "}
-              <a
-                href="https://nodejs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline underline-offset-4 transition-colors duration-300 hover:text-foreground"
-              >
-                Node.js 18+
-              </a>
-              {" "}and{" "}
+              Evergreen requires{" "}
               <a
                 href="https://docs.anthropic.com/en/docs/claude-code"
                 target="_blank"
@@ -127,7 +148,7 @@ export default function Home() {
               >
                 Claude Code
               </a>
-              {" "}installed.{" "}
+              .{" "}
               <Link
                 href="/docs/getting-started"
                 className="underline underline-offset-4 transition-colors duration-300 hover:text-foreground"
@@ -136,24 +157,55 @@ export default function Home() {
               </Link>
             </p>
           </div>
-          <div className="mt-12 max-w-xl space-y-0">
-            {steps.map((step, i) => (
-              <div
-                key={i}
-                className="flex gap-5 py-5"
-              >
-                <span className="shrink-0 pt-1 font-mono text-sm text-muted-foreground">
-                  {i + 1}
-                </span>
-                <div className="min-w-0 flex-1 space-y-2">
-                  <p className="font-medium leading-8">{step.title}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {step.description}
-                  </p>
-                  <CodeBlock>{step.code}</CodeBlock>
-                </div>
+
+          <div className="mt-16 grid gap-16 lg:grid-cols-2 lg:gap-20">
+            {/* New project */}
+            <div>
+              <h3 className="text-lg font-bold tracking-tight uppercase">New project</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Start fresh with Evergreen as your foundation. Run these in your terminal.
+              </p>
+              <div className="mt-8 max-w-xl space-y-0">
+                {newProjectSteps.map((step, i) => (
+                  <div key={i} className="flex gap-5 py-5">
+                    <span className="shrink-0 pt-1 font-mono text-sm text-muted-foreground">
+                      {i + 1}
+                    </span>
+                    <div className="min-w-0 flex-1 space-y-2">
+                      <p className="font-medium leading-8">{step.title}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {step.description}
+                      </p>
+                      <CodeBlock>{step.code}</CodeBlock>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Existing project */}
+            <div>
+              <h3 className="text-lg font-bold tracking-tight uppercase">Existing project</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Already have a project? Add the skills to your codebase. Run these in your terminal.
+              </p>
+              <div className="mt-8 max-w-xl space-y-0">
+                {existingProjectSteps.map((step, i) => (
+                  <div key={i} className="flex gap-5 py-5">
+                    <span className="shrink-0 pt-1 font-mono text-sm text-muted-foreground">
+                      {i + 1}
+                    </span>
+                    <div className="min-w-0 flex-1 space-y-2">
+                      <p className="font-medium leading-8">{step.title}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {step.description}
+                      </p>
+                      <CodeBlock>{step.code}</CodeBlock>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -164,7 +216,7 @@ export default function Home() {
           <p className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">
             Built-in Skills
           </p>
-          <h2 className="text-5xl font-black tracking-tighter uppercase sm:text-7xl lg:text-8xl">
+          <h2 className="text-3xl font-black tracking-tighter uppercase sm:text-4xl lg:text-5xl">
             Your CLI Design Workflow
           </h2>
         </div>
@@ -198,7 +250,7 @@ export default function Home() {
           <p className="mb-3 text-xs font-medium tracking-widest text-muted-foreground uppercase">
             What&apos;s Inside
           </p>
-          <h2 className="mb-12 text-5xl font-black tracking-tighter uppercase sm:text-7xl lg:text-8xl">
+          <h2 className="mb-12 text-3xl font-black tracking-tighter uppercase sm:text-4xl lg:text-5xl">
             A solid foundation, ready to go
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

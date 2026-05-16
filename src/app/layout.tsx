@@ -63,7 +63,7 @@ export default function RootLayout({
       <body className="min-h-full flex">
         {/* Logo */}
         <a href="/" className="fixed top-6 right-6 z-50 transition-all duration-300 hover:scale-110 sm:top-8 sm:right-10 lg:right-10">
-          <img src="/evergreen.svg" alt="Evergreen" className="h-8 w-auto sm:h-10" />
+          <img src="/evergreen.svg" alt="Evergreen" className="h-5 w-auto sm:h-6" />
         </a>
 
         {/* Desktop sidebar */}

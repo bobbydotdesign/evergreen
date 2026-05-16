@@ -1,11 +1,9 @@
-# /wireframe — Rapid Prototyping
+---
+description: Rapidly prototype interactive wireframes and screens. Use when the user wants quick low-fi prototypes, screen layouts, or flow mockups.
+argument-hint: "[app or screen description]"
+---
 
-## Description
-Quickly generate low-fidelity or high-fidelity interactive prototypes from a description.
-
-## Instructions
-
-When the user invokes `/wireframe`, they want a fast, working prototype — not a polished product. Speed matters more than perfection.
+The user wants a fast, working prototype — not a polished product. Speed matters more than perfection.
 
 ### Usage
 - `/wireframe a todo app` — generate a full wireframe prototype
@@ -13,7 +11,6 @@ When the user invokes `/wireframe`, they want a fast, working prototype — not 
 - `/wireframe iterate on the dashboard` — refine an existing prototype
 
 ### Process
-
 1. **Parse the request** — identify the screens, flows, and key interactions needed
 2. **Generate the prototype** — create pages and components directly in the app
 3. **Keep it fast** — use placeholder content, lorem ipsum is fine, stock icons are fine
@@ -31,11 +28,11 @@ When the user invokes `/wireframe`, they want a fast, working prototype — not 
 ### File Structure
 ```
 src/app/
-  page.tsx              ← main screen
+  page.tsx              <- main screen
   [flow]/
-    page.tsx            ← additional screens
+    page.tsx            <- additional screens
 src/components/
-  wireframe/            ← wireframe-specific components
+  wireframe/            <- wireframe-specific components
 ```
 
 ### After Generating

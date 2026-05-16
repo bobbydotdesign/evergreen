@@ -1,11 +1,6 @@
-# /ship — Deploy & Feedback
-
-## Description
-Deploy the project to Vercel and set up feedback collection.
-
-## Instructions
-
-When the user invokes `/ship`, help them deploy and optionally set up feedback capture.
+---
+description: Deploy to Vercel and set up feedback collection. Use when the user wants to deploy, ship, publish, or collect user feedback.
+---
 
 ### Deploy to Vercel
 

@@ -1,18 +1,14 @@
-# /research — Product & Market Research
+---
+description: Conduct competitive analysis, market research, and user insights. Use when the user wants to research competitors, validate assumptions, or understand a market.
+argument-hint: "[topic or product area]"
+---
 
-## Description
-Conduct competitive analysis, market research, and user insight gathering for a product idea.
-
-## Instructions
-
-When the user invokes `/research`, ask what they'd like to research if no topic is provided. Accept topics like:
+Ask what the user wants to research if no topic is provided. Accept topics like:
 - A product idea or space (e.g., "habit tracking apps")
 - A specific competitor (e.g., "how does Linear handle project views")
 - A user need (e.g., "how do freelancers manage invoicing")
 
-Use WebSearch and WebFetch to gather real data. Structure findings into a research brief and save to `docs/research.md`.
-
-### Research Brief Structure
+Use WebSearch and WebFetch to gather real data. Structure findings and save to `docs/research.md`:
 
 ```markdown
 # Research: [Topic]
@@ -47,7 +43,7 @@ Numbered list of actionable insights for the product.
 Links to sources used.
 ```
 
-### Guidelines
+Guidelines:
 - Focus on actionable insights, not exhaustive data dumps
 - Highlight design opportunities — this is for a product designer
 - If a PRD exists in `docs/prd.md`, cross-reference findings with it

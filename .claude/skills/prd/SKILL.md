@@ -1,11 +1,9 @@
-# /prd — Product Requirements Document Generator
+---
+description: Generate a product requirements document from a brief. Use when the user wants to define what they're building, create a PRD, or plan a product.
+argument-hint: "[product idea]"
+---
 
-## Description
-Generate a structured PRD from a brief product idea or description.
-
-## Instructions
-
-When the user invokes `/prd`, guide them through creating a product requirements document. If they provide a brief, generate the full PRD immediately. If not, ask for a one-liner about what they're building.
+Guide the user through creating a product requirements document. If they provide a brief, generate the full PRD immediately. If not, ask for a one-liner about what they're building.
 
 Generate a PRD using this structure and save it to `docs/prd.md`:
 

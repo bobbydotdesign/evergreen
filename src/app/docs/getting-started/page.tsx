@@ -8,13 +8,22 @@ export default function GettingStarted() {
     <DocsContent>
       <h1>Getting Started</h1>
       <p>
-        Get Evergreen running on your machine and build your first prototype.
-        This takes about 10 minutes.
+        Evergreen is an agentic design framework that runs inside{" "}
+        <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer">
+          Claude Code
+        </a>
+        . You can start a new project with it or add the skills to an existing one.
       </p>
 
       <h2>Prerequisites</h2>
-      <p>Make sure you have these installed before starting:</p>
       <ul>
+        <li>
+          <strong>Claude Code</strong> — Evergreen requires Claude Code.{" "}
+          <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer">
+            Install it
+          </a>{" "}
+          if you haven&apos;t already, then verify with <code>claude --version</code>.
+        </li>
         <li>
           <strong>Node.js 18+</strong> — download from{" "}
           <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">
@@ -26,41 +35,14 @@ export default function GettingStarted() {
           <strong>Git</strong> — most systems have this pre-installed. Run{" "}
           <code>git --version</code> to check.
         </li>
-        <li>
-          <strong>A Claude account</strong> — either a{" "}
-          <a
-            href="https://claude.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Claude Pro or Max subscription
-          </a>
-          , or an{" "}
-          <a
-            href="https://console.anthropic.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            API key
-          </a>{" "}
-          from the Anthropic console.
-        </li>
       </ul>
 
       <hr />
 
-      <h2>Step 1: Install Claude Code</h2>
-      <p>
-        Claude Code is a terminal-based AI assistant. Install it globally with
-        npm:
-      </p>
-      <CodeBlock>npm install -g @anthropic-ai/claude-code</CodeBlock>
-      <p>
-        Verify it installed correctly:
-      </p>
-      <CodeBlock>claude --version</CodeBlock>
+      <h2>Option A: New project</h2>
+      <p>Start fresh with Evergreen as your foundation. Run these commands in your terminal.</p>
 
-      <h2>Step 2: Clone and install</h2>
+      <h3>1. Clone and install</h3>
       <p>Clone the Evergreen repo and install dependencies:</p>
       <CodeBlock>{`git clone https://github.com/bobbydotdesign/evergreen.git my-project
 cd my-project
@@ -70,31 +52,20 @@ npm install`}</CodeBlock>
         project.
       </p>
 
-      <h2>Step 3: Start the dev server</h2>
-      <p>This launches a local preview of your project:</p>
-      <CodeBlock>npm run dev</CodeBlock>
+      <h3>2. Start Claude Code</h3>
       <p>
-        Open{" "}
-        <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer">
-          http://localhost:3000
-        </a>{" "}
-        in your browser. You should see the Evergreen landing page.
+        This is where you&apos;ll use the built-in skills to design and build:
       </p>
-
-      <h2>Step 4: Open Claude Code</h2>
+      <CodeBlock>claude</CodeBlock>
       <p>
-        Open a <strong>new terminal tab</strong> (keep the dev server running in
-        the first one), navigate to your project folder, and start Claude Code:
-      </p>
-      <CodeBlock>{`cd my-project
-claude`}</CodeBlock>
-      <p>
+        You may be asked to trust the project folder — select{" "}
+        <strong>&quot;Yes, I trust this folder&quot;</strong> to continue.
         You&apos;re now talking to Claude inside your project. It can see all
         your files, understands the design system, and knows about the built-in
         skills.
       </p>
 
-      <h2>Step 5: Build something</h2>
+      <h3>3. Start building</h3>
       <p>
         Try your first skill. Type this in Claude Code:
       </p>
@@ -111,7 +82,44 @@ claude`}</CodeBlock>
       <CodeBlock>/wireframe</CodeBlock>
       <p>
         Claude will read your PRD and create interactive wireframe screens.
-        Refresh your browser to see them.
+      </p>
+
+      <p>
+        When you&apos;re ready to preview, just ask Claude to start the dev
+        server — it runs in the background so you can keep working. Open{" "}
+        <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer">
+          http://localhost:3000
+        </a>{" "}
+        in your browser to see your work.
+      </p>
+
+      <hr />
+
+      <h2>Option B: Existing project</h2>
+      <p>
+        Already have a project with Claude Code? Add the Evergreen skills and
+        configuration without changing your existing stack. Run these commands in your terminal from your project folder.
+      </p>
+
+      <h3>1. Copy the skills</h3>
+      <p>From the root of your existing project:</p>
+      <CodeBlock>{`git clone https://github.com/bobbydotdesign/evergreen.git /tmp/evergreen
+cp -r /tmp/evergreen/.claude .claude
+cp /tmp/evergreen/CLAUDE.md CLAUDE.md
+rm -rf /tmp/evergreen`}</CodeBlock>
+      <p>
+        This adds the <code>.claude/skills/</code> directory and project
+        instructions to your codebase.
+      </p>
+
+      <h3>2. Open Claude Code</h3>
+      <p>Start Claude Code in your project:</p>
+      <CodeBlock>claude</CodeBlock>
+      <p>
+        All skills (<code>/prd</code>, <code>/research</code>,{" "}
+        <code>/design</code>, <code>/wireframe</code>, <code>/ship</code>, etc.)
+        are immediately available. You may want to edit <code>CLAUDE.md</code> to
+        match your project&apos;s stack and conventions.
       </p>
 
       <hr />

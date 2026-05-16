@@ -25,7 +25,14 @@ docs/
   research.md       <- Research findings (created by /research)
   design-system.md  <- Design system docs (created by /design-system)
 .claude/
-  skills/           <- Custom skills for agentic workflow
+  skills/
+    prd/SKILL.md           <- Product requirements generator
+    research/SKILL.md      <- Market & competitive research
+    design/SKILL.md        <- UI components and pages
+    design-system/SKILL.md <- Colors, typography, spacing
+    wireframe/SKILL.md     <- Rapid prototyping
+    figma/SKILL.md         <- Figma-to-code workflow
+    ship/SKILL.md          <- Deploy to Vercel
 ```
 
 ## Design System Conventions

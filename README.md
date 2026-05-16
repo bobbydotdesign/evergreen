@@ -1,31 +1,44 @@
 # Evergreen
 
-A starter kit for agentic product design. Built for product designers who use Claude Code to go from idea to deployed prototype.
+An agentic design framework for product designers who use [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Go from idea to deployed prototype using built-in skills for research, design, prototyping, and deployment.
+
+> **Requires [Claude Code](https://docs.anthropic.com/en/docs/claude-code)** — Evergreen is a set of skills and conventions that run inside Claude Code. You'll need it installed to use this framework.
 
 ## What's Inside
 
+- **Claude Code Skills** — `/prd`, `/research`, `/design`, `/wireframe`, `/ship` and more
 - **Next.js + TypeScript** — App Router, server components by default
 - **Tailwind CSS v4 + shadcn/ui** — Complete design system with light/dark mode
 - **Geist Font** — Clean, modern typography from Vercel
-- **Claude Code Skills** — Built-in commands for your design workflow
 - **Figma MCP Support** — Bidirectional design-to-code workflow
 
 ## Quick Start
 
+### New project
+
+Start fresh with Evergreen as your foundation. Run these in your terminal.
+
 ```bash
-# Clone the template
 git clone https://github.com/bobbydotdesign/evergreen.git my-project
 cd my-project
-
-# Install dependencies
 npm install
-
-# Start the dev server
-npm run dev
-
-# Open Claude Code and start building
 claude
 ```
+
+Once inside Claude Code, ask it to start the dev server when you're ready to preview in your browser.
+
+### Existing project
+
+Already have a project? Add the Evergreen skills and configuration to it. Run these in your terminal from your project folder.
+
+```bash
+git clone https://github.com/bobbydotdesign/evergreen.git /tmp/evergreen
+cp -r /tmp/evergreen/.claude .claude
+cp /tmp/evergreen/CLAUDE.md CLAUDE.md
+rm -rf /tmp/evergreen
+```
+
+This gives you all the built-in skills without changing your existing stack. Open Claude Code in your project and they're ready to use.
 
 ## Skills
 

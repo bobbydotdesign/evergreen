@@ -1,32 +1,16 @@
 {
-  "skills": {
-    "prd": {
-      "description": "Generate a product requirements document from a brief. Use when user wants to define what they're building, create a PRD, or plan a product.",
-      "instructions_file": ".claude/skills/prd.md"
-    },
-    "research": {
-      "description": "Conduct market research, competitive analysis, and user insights. Use when user wants to research competitors, validate assumptions, or understand a market.",
-      "instructions_file": ".claude/skills/research.md"
-    },
-    "design": {
-      "description": "Create and refine frontend UI components and pages. Use when user wants to build, style, or improve UI elements using the design system.",
-      "instructions_file": ".claude/skills/design.md"
-    },
-    "wireframe": {
-      "description": "Rapidly prototype interactive wireframes and screens. Use when user wants quick low-fi prototypes, screen layouts, or flow mockups.",
-      "instructions_file": ".claude/skills/wireframe.md"
-    },
-    "ship": {
-      "description": "Deploy to Vercel and set up feedback collection. Use when user wants to deploy, ship, publish, or collect user feedback.",
-      "instructions_file": ".claude/skills/ship.md"
-    },
-    "figma": {
-      "description": "Pull designs from Figma, extract tokens, translate to code, and sync component mappings. Use when user wants to work with Figma files, inspect designs, or sync components.",
-      "instructions_file": ".claude/skills/figma.md"
-    },
-    "design-system": {
-      "description": "Set up or modify the design system: colors, typography, spacing, radius, and component conventions. Use when user wants to change colors, fonts, theme, or audit design consistency.",
-      "instructions_file": ".claude/skills/design-system.md"
-    }
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/check-update.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
   }
 }
