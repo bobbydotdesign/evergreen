@@ -3,16 +3,22 @@ description: Generate a product requirements document from a brief. Use when the
 argument-hint: "[product idea | guided | research-first | refine]"
 ---
 
-### Context Detection
+### Getting Started
 
-Before starting, check for existing files:
-- If `docs/prd.md` exists, mention it and offer **Refine** mode
+If the user provides a product brief as the argument (e.g. `/ev-prd a habit tracking app`), go straight to **Quick** mode.
+
+Otherwise, use AskUserQuestion to present the available modes:
+- **Guided walkthrough** — Answer a few questions to shape the PRD (recommended)
+- **Research-first** — Research the market first, then generate a grounded PRD
+- **Refine existing** — Improve or restructure an existing PRD or notes
+
+Also check for existing files and adjust:
+- If `docs/prd.md` exists, mention it and default to **Refine**
 - If `docs/research.md` exists, note that research is available to inform the PRD
-- If the user provides an argument, route to the matching mode below
 
 ### Modes
 
-**Guided** — default when no argument is provided (or `/ev-prd guided`)
+**Guided** — recommended default
 Walk through product thinking one question at a time:
 
 1. What are you building, in one sentence?
