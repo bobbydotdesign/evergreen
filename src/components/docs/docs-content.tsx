@@ -10,8 +10,8 @@ export function DocsContent({
   return (
     <div
       className={cn(
-        // Headings — light weight, Scandinavian style
-        "[&>h1]:mb-2 [&>h1]:text-4xl [&>h1]:font-extralight [&>h1]:tracking-tight",
+        // Headings
+        "[&>h1]:mb-2 [&>h1]:text-2xl [&>h1]:font-black [&>h1]:tracking-tighter [&>h1]:uppercase sm:[&>h1]:text-3xl lg:[&>h1]:text-4xl",
         "[&>h2]:mb-4 [&>h2]:mt-14 [&>h2]:text-2xl [&>h2]:font-extralight [&>h2]:tracking-tight [&>h2]:first:mt-0",
         "[&>h3]:mb-3 [&>h3]:mt-8 [&>h3]:text-lg [&>h3]:font-light",
 
