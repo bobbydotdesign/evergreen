@@ -116,6 +116,12 @@ export function DocsSidebar({ className }: { className?: string }) {
           >
             GitHub
           </a>
+          <Link
+            href="/brand"
+            className="transition-colors hover:text-foreground"
+          >
+            Brand
+          </Link>
           <span>MIT License</span>
         </div>
       </div>
