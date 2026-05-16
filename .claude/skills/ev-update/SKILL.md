@@ -35,6 +35,7 @@ Update the Evergreen skills and configuration from GitHub. Follow these steps ex
    ```bash
    rm -rf .claude/skills .claude/hooks
    cp -r /tmp/evergreen-update/.claude/skills .claude/skills
+   rm -rf .claude/skills/ev-version  # maintainer-only skill, not distributed
    cp -r /tmp/evergreen-update/.claude/hooks .claude/hooks 2>/dev/null
    cp /tmp/evergreen-update/.claude/VERSION .claude/VERSION
    cp /tmp/evergreen-update/.claude/settings.json .claude/settings.json
