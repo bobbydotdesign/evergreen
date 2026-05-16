@@ -7,14 +7,19 @@ argument-hint: "[product idea | guided | research-first | refine]"
 
 If the user provides a product brief as the argument (e.g. `/ev-prd a habit tracking app`), go straight to **Quick** mode.
 
-If no argument is provided, you MUST first ask the user to choose a mode before doing anything else. Do NOT skip this step. Do NOT default to Guided without asking. Present these options:
-1. **Guided walkthrough** — Answer a few questions to shape the PRD (recommended for new products)
-2. **Quick generation** — Describe your idea and get a full PRD immediately
-3. **Research-first** — Research the market first, then generate a grounded PRD
-4. **Refine existing** — Improve or restructure an existing PRD or notes
+If no argument is provided, you MUST use the AskUserQuestion tool to let the user pick a mode before doing anything else. Do NOT skip this step. Do NOT proceed without their choice.
+
+Call AskUserQuestion with:
+- question: "How would you like to create your PRD?"
+- header: "Mode"
+- options:
+  - label: "Guided walkthrough (Recommended)", description: "I'll ask a few questions to shape your product thinking before generating"
+  - label: "Quick generation", description: "Describe your idea and get a full PRD immediately"
+  - label: "Research-first", description: "Research the market and competitors, then generate a grounded PRD"
+  - label: "Refine existing", description: "Improve or restructure a PRD or notes you already have"
 
 Context adjustments:
-- If `docs/prd.md` exists, mention it and recommend **Refine**
+- If `docs/prd.md` exists, mention it before asking and recommend **Refine**
 - If `docs/research.md` exists, note that research is available to inform the PRD
 
 Wait for the user's choice, then proceed to the matching mode below.
