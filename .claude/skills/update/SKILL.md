@@ -33,9 +33,11 @@ Update the Evergreen skills and configuration from GitHub. Follow these steps ex
 
 6. **Copy the updated files**:
    ```bash
-   rm -rf .claude/skills
+   rm -rf .claude/skills .claude/hooks
    cp -r /tmp/evergreen-update/.claude/skills .claude/skills
+   cp -r /tmp/evergreen-update/.claude/hooks .claude/hooks
    cp /tmp/evergreen-update/.claude/VERSION .claude/VERSION
+   cp /tmp/evergreen-update/.claude/settings.json .claude/settings.json
    cp /tmp/evergreen-update/CLAUDE.md CLAUDE.md
    ```
 
@@ -47,6 +49,6 @@ Update the Evergreen skills and configuration from GitHub. Follow these steps ex
 8. **Report** what was updated and suggest restarting Claude Code to load the new skills.
 
 Important:
-- Only update `.claude/skills/`, `.claude/VERSION`, and `CLAUDE.md`
+- Only update `.claude/skills/`, `.claude/hooks/`, `.claude/settings.json`, `.claude/VERSION`, and `CLAUDE.md`
 - Never touch the user's source code, components, or other project files
 - If anything fails, restore from the backup and report the error
