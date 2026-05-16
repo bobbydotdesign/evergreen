@@ -1,6 +1,10 @@
 # Evergreen
 
-An agentic design framework for product designers who use [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Go from idea to deployed prototype using built-in skills for research, design, prototyping, and deployment.
+An opinionated agentic design framework, built from my preferences while building and launching products as a one-person team. Go from idea to deployed prototype using [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with built-in skills for research, design, prototyping, and deployment.
+
+If you're adding Evergreen to an existing project, I'd recommend removing the tech stack dependencies and just leveraging the skills — they work with any stack.
+
+Like most things I do, this is an experiment. I'll continue to evolve and support it as I evolve my own workflow, and I welcome anyone's thoughts and contributions as we all figure out how to design in this new era.
 
 > **Requires [Claude Code](https://docs.anthropic.com/en/docs/claude-code)** — Evergreen is a set of skills and conventions that run inside Claude Code. You'll need it installed to use this framework.
 
@@ -138,11 +142,7 @@ Run `/ev-update` inside Claude Code. It updates only the Evergreen section of `C
 
 ## Contributing
 
-Contributions welcome! This is an open-source tool for the design community. Feel free to:
-- Add new skills
-- Improve existing ones
-- Suggest workflow improvements
-- Share how you use it
+This is an open-source tool for the design community. If you have ideas, improvements, or want to share how you're using it — I'd love to hear from you. Feel free to open an issue or PR.
 
 ## License
 
