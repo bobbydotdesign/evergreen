@@ -3,43 +3,43 @@ import { CodeBlock } from "@/components/docs/code-block";
 
 const skills = [
   {
-    command: "/prd",
+    command: "/ev-prd",
     title: "Product Requirements",
     description: "Generate a structured PRD from a product idea or brief.",
     href: "/docs/skills/prd",
   },
   {
-    command: "/research",
+    command: "/ev-research",
     title: "Market Research",
     description: "Competitive analysis, user insights, and market validation.",
     href: "/docs/skills/research",
   },
   {
-    command: "/design",
+    command: "/ev-design",
     title: "Frontend Design",
     description: "Create and refine UI components and full page layouts.",
     href: "/docs/skills/design",
   },
   {
-    command: "/wireframe",
+    command: "/ev-wireframe",
     title: "Rapid Prototype",
     description: "Quick interactive wireframes from a simple description.",
     href: "/docs/skills/wireframe",
   },
   {
-    command: "/design-system",
+    command: "/ev-designsystem",
     title: "Design System",
     description: "Configure colors, typography, spacing, and audit consistency.",
     href: "/docs/skills/design-system",
   },
   {
-    command: "/figma",
+    command: "/ev-figma",
     title: "Figma Integration",
     description: "Pull designs, extract tokens, and sync components with Figma.",
     href: "/docs/skills/figma",
   },
   {
-    command: "/ship",
+    command: "/ev-ship",
     title: "Deploy & Feedback",
     description: "Ship to Vercel and set up user feedback collection.",
     href: "/docs/skills/ship",
@@ -70,7 +70,7 @@ const newProjectSteps = [
   {
     title: "Start building",
     description: "Describe your idea and Claude generates a full PRD, then prototype it.",
-    code: "/prd",
+    code: "/ev-prd",
   },
 ];
 

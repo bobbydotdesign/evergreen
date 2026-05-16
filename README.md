@@ -6,7 +6,7 @@ An agentic design framework for product designers who use [Claude Code](https://
 
 ## What's Inside
 
-- **Claude Code Skills** — `/prd`, `/research`, `/design`, `/wireframe`, `/ship` and more
+- **Claude Code Skills** — `/ev-prd`, `/ev-research`, `/ev-design`, `/ev-wireframe`, `/ev-ship` and more
 - **Next.js + TypeScript** — App Router, server components by default
 - **Tailwind CSS v4 + shadcn/ui** — Complete design system with light/dark mode
 - **Geist Font** — Clean, modern typography from Vercel
@@ -34,31 +34,37 @@ Already have a project? Add the Evergreen skills and configuration to it. Run th
 ```bash
 git clone https://github.com/bobbydotdesign/evergreen.git /tmp/evergreen
 cp -r /tmp/evergreen/.claude .claude
-cp /tmp/evergreen/CLAUDE.md CLAUDE.md
 rm -rf /tmp/evergreen
 ```
+
+Then add the Evergreen section to your `CLAUDE.md` (or create one if you don't have it). Copy the content between the `<!-- EVERGREEN:START -->` and `<!-- EVERGREEN:END -->` markers from the [template CLAUDE.md](https://github.com/bobbydotdesign/evergreen/blob/main/CLAUDE.md) into yours.
 
 This gives you all the built-in skills without changing your existing stack. Open Claude Code in your project and they're ready to use.
 
 ## Skills
 
-These skills are available in Claude Code when working in this project:
+Type `ev-` in Claude Code to see all available skills:
 
 | Skill | What it does |
 |-------|-------------|
-| `/prd` | Generate a product requirements document from an idea |
-| `/research` | Competitive analysis and market research |
-| `/design` | Create and refine UI components and pages |
-| `/wireframe` | Rapid low-fi interactive prototypes |
-| `/ship` | Deploy to Vercel and set up feedback collection |
+| `/ev-prd` | Generate a product requirements document from an idea |
+| `/ev-research` | Competitive analysis and market research |
+| `/ev-design` | Create and refine UI components and pages |
+| `/ev-designsystem` | Configure colors, typography, spacing |
+| `/ev-wireframe` | Rapid low-fi interactive prototypes |
+| `/ev-figma` | Pull designs from Figma, extract tokens, sync components |
+| `/ev-ship` | Deploy to Vercel and set up feedback collection |
+| `/ev-update` | Update Evergreen to the latest version |
+| `/ev-help` | Show all skills and the recommended workflow |
 
 ## Recommended Workflow
 
-1. **Define** — Run `/prd` to create a product requirements doc
-2. **Research** — Run `/research` to validate your assumptions
-3. **Prototype** — Run `/wireframe` to quickly build interactive screens
-4. **Refine** — Run `/design` to polish components and layouts
-5. **Ship** — Run `/ship` to deploy to Vercel and collect feedback
+1. **Define** — Run `/ev-prd` to create a product requirements doc
+2. **Research** — Run `/ev-research` to validate your assumptions
+3. **Foundation** — Run `/ev-designsystem` to set your visual foundation
+4. **Prototype** — Run `/ev-wireframe` to quickly build interactive screens
+5. **Refine** — Run `/ev-design` to polish components and layouts
+6. **Ship** — Run `/ev-ship` to deploy to Vercel and collect feedback
 
 ## Figma Integration
 
@@ -97,7 +103,38 @@ docs/
   research.md          <- Research (from /research)
 .claude/
   skills/              <- Claude Code skills
+  settings.json        <- Evergreen settings (managed by /ev-update)
+CLAUDE.md              <- Project instructions (see Architecture below)
 ```
+
+## Architecture
+
+### CLAUDE.md — markers system
+
+`CLAUDE.md` uses markers to separate Evergreen framework content from your project instructions:
+
+```markdown
+<!-- EVERGREEN:START — managed by /ev-update, do not edit below this line -->
+... framework conventions (stack, coding standards, skills, workflow) ...
+<!-- EVERGREEN:END — add your project instructions below -->
+
+# Project Instructions
+... your design system choices, project-specific rules, etc. ...
+```
+
+- **Between markers**: Evergreen-managed. Overwritten when you run `/ev-update`. Contains coding conventions, skill documentation, and workflow guidance.
+- **Below markers**: Yours. Never touched by updates. This is where `/ev-designsystem` writes your color, typography, and spacing choices.
+
+This means your project instructions always take priority (last instruction wins in Claude's context).
+
+### Settings separation
+
+- `.claude/settings.json` — Evergreen-managed permissions and hooks. Overwritten on update.
+- `.claude/settings.local.json` — Your customizations. Never touched by updates. Claude Code merges both automatically.
+
+### Updating
+
+Run `/ev-update` inside Claude Code. It updates only the Evergreen section of `CLAUDE.md`, skills, hooks, and settings — your project instructions and source code are never modified.
 
 ## Contributing
 

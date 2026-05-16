@@ -5,7 +5,7 @@ import { CodeBlock } from "@/components/docs/code-block";
 export default function PrdDocs() {
   return (
     <DocsContent>
-      <h1>/prd</h1>
+      <h1>/ev-prd</h1>
       <p>
         Generate a structured product requirements document from a product idea.
         This is usually the first skill you run on a new project.
@@ -20,14 +20,14 @@ export default function PrdDocs() {
 
       <h2>How to use it</h2>
       <p>In Claude Code, type:</p>
-      <CodeBlock>/prd</CodeBlock>
+      <CodeBlock>/ev-prd</CodeBlock>
       <p>
         Claude will ask you to describe your product. You can be brief (&quot;a
         habit tracking app&quot;) or detailed. The more context you give, the
         better the output.
       </p>
       <p>You can also provide your brief directly:</p>
-      <CodeBlock>/prd a marketplace for freelance designers to sell templates</CodeBlock>
+      <CodeBlock>/ev-prd a marketplace for freelance designers to sell templates</CodeBlock>
 
       <h2>What it creates</h2>
       <p>
@@ -47,9 +47,9 @@ export default function PrdDocs() {
 
       <h2>What to do next</h2>
       <p>
-        Run <Link href="/docs/skills/research"><code>/research</code></Link> to
+        Run <Link href="/docs/skills/research"><code>/ev-research</code></Link> to
         validate your assumptions against the market, or jump to{" "}
-        <Link href="/docs/skills/wireframe"><code>/wireframe</code></Link> to
+        <Link href="/docs/skills/wireframe"><code>/ev-wireframe</code></Link> to
         start prototyping immediately.
       </p>
     </DocsContent>

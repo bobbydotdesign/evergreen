@@ -51,4 +51,4 @@ After generating:
 - Save to `docs/prd.md`
 - Create the `docs/` directory if it doesn't exist
 - Offer to refine any section
-- Suggest running `/research` to validate assumptions
+- Suggest running `/ev-research` to validate assumptions

@@ -5,7 +5,7 @@ import { CodeBlock } from "@/components/docs/code-block";
 export default function WireframeDocs() {
   return (
     <DocsContent>
-      <h1>/wireframe</h1>
+      <h1>/ev-wireframe</h1>
       <p>
         Rapidly generate interactive wireframes and prototypes from a
         description. Speed matters more than polish — get something on screen
@@ -20,7 +20,7 @@ export default function WireframeDocs() {
       </ul>
 
       <h2>How to use it</h2>
-      <CodeBlock>/wireframe a todo app with projects and tags</CodeBlock>
+      <CodeBlock>/ev-wireframe a todo app with projects and tags</CodeBlock>
       <p>
         Claude generates multiple screens with navigation between them, working
         form inputs, and basic state management. Placeholder content is used
@@ -28,9 +28,9 @@ export default function WireframeDocs() {
       </p>
       <p>More examples:</p>
       <ul>
-        <li><code>/wireframe login and signup flow</code> — specific screens</li>
-        <li><code>/wireframe iterate on the dashboard</code> — refine existing wireframes</li>
-        <li><code>/wireframe</code> — if a PRD exists, Claude reads it and prototypes from that</li>
+        <li><code>/ev-wireframe login and signup flow</code> — specific screens</li>
+        <li><code>/ev-wireframe iterate on the dashboard</code> — refine existing wireframes</li>
+        <li><code>/ev-wireframe</code> — if a PRD exists, Claude reads it and prototypes from that</li>
       </ul>
 
       <h2>What it creates</h2>
@@ -50,9 +50,9 @@ export default function WireframeDocs() {
       <h2>What to do next</h2>
       <p>
         Once your wireframes feel right, run{" "}
-        <Link href="/docs/skills/design"><code>/design</code></Link> to convert
+        <Link href="/docs/skills/design"><code>/ev-design</code></Link> to convert
         them to high-fidelity UI. Or run{" "}
-        <Link href="/docs/skills/ship"><code>/ship</code></Link> to deploy the
+        <Link href="/docs/skills/ship"><code>/ev-ship</code></Link> to deploy the
         wireframes for early feedback.
       </p>
     </DocsContent>

@@ -60,13 +60,13 @@ export default function SkillsOverview() {
       <h2>How to use them</h2>
       <p>
         Open Claude Code in your project and type a skill command. You can run
-        them bare (e.g. <code>/prd</code>) and Claude will ask for details, or
+        them bare (e.g. <code>/ev-prd</code>) and Claude will ask for details, or
         provide context directly (e.g.{" "}
-        <code>/wireframe a dashboard with analytics</code>).
+        <code>/ev-wireframe a dashboard with analytics</code>).
       </p>
       <p>
         Skills are aware of each other. If you&apos;ve already run{" "}
-        <code>/prd</code>, then <code>/wireframe</code> will use your PRD as
+        <code>/ev-prd</code>, then <code>/ev-wireframe</code> will use your PRD as
         context. They&apos;re designed to chain together — see the{" "}
         <Link href="/docs/workflow">Workflow</Link> page for the recommended
         order.
@@ -77,7 +77,7 @@ export default function SkillsOverview() {
       <SkillGrid
         skills={[
           {
-            cmd: "/prd",
+            cmd: "/ev-prd",
             title: "Product Requirements",
             summary:
               "Generate a structured PRD from a product idea. Covers goals, features, user flows, scope, and open questions.",
@@ -85,7 +85,7 @@ export default function SkillsOverview() {
             href: "/docs/skills/prd",
           },
           {
-            cmd: "/research",
+            cmd: "/ev-research",
             title: "Market Research",
             summary:
               "Competitive analysis, market landscape, and user insights. Searches the web for real data and synthesizes findings.",
@@ -100,7 +100,7 @@ export default function SkillsOverview() {
       <SkillGrid
         skills={[
           {
-            cmd: "/design-system",
+            cmd: "/ev-designsystem",
             title: "Design System",
             summary:
               "Configure colors, typography, spacing, and radius. Audit your codebase for inconsistencies. Export a design system doc.",
@@ -108,7 +108,7 @@ export default function SkillsOverview() {
             href: "/docs/skills/design-system",
           },
           {
-            cmd: "/wireframe",
+            cmd: "/ev-wireframe",
             title: "Rapid Prototype",
             summary:
               "Generate interactive wireframes from a description. Creates pages with navigation, forms, and placeholder content. Speed over polish.",
@@ -116,7 +116,7 @@ export default function SkillsOverview() {
             href: "/docs/skills/wireframe",
           },
           {
-            cmd: "/design",
+            cmd: "/ev-design",
             title: "Frontend Design",
             summary:
               "Create and refine UI components and pages. Three modes: component, page, and refine. Uses shadcn/ui and the design system.",
@@ -131,7 +131,7 @@ export default function SkillsOverview() {
       <SkillGrid
         skills={[
           {
-            cmd: "/figma",
+            cmd: "/ev-figma",
             title: "Figma Integration",
             summary:
               "Pull designs from Figma, extract tokens, build components from frames, and sync code-connect mappings. Requires Figma MCP.",
@@ -146,7 +146,7 @@ export default function SkillsOverview() {
       <SkillGrid
         skills={[
           {
-            cmd: "/ship",
+            cmd: "/ev-ship",
             title: "Deploy & Feedback",
             summary:
               "Deploy to Vercel with one command. Optionally add a feedback widget or dedicated feedback page to collect user responses.",

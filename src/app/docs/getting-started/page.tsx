@@ -69,7 +69,7 @@ npm install`}</CodeBlock>
       <p>
         Try your first skill. Type this in Claude Code:
       </p>
-      <CodeBlock>/prd</CodeBlock>
+      <CodeBlock>/ev-prd</CodeBlock>
       <p>
         Claude will ask you to describe what you want to build. Tell it your
         idea in plain language — even a single sentence works. Claude generates a
@@ -79,7 +79,7 @@ npm install`}</CodeBlock>
       <p>
         Next, try generating your first prototype:
       </p>
-      <CodeBlock>/wireframe</CodeBlock>
+      <CodeBlock>/ev-wireframe</CodeBlock>
       <p>
         Claude will read your PRD and create interactive wireframe screens.
       </p>
@@ -105,21 +105,36 @@ npm install`}</CodeBlock>
       <p>From the root of your existing project:</p>
       <CodeBlock>{`git clone https://github.com/bobbydotdesign/evergreen.git /tmp/evergreen
 cp -r /tmp/evergreen/.claude .claude
-cp /tmp/evergreen/CLAUDE.md CLAUDE.md
 rm -rf /tmp/evergreen`}</CodeBlock>
       <p>
-        This adds the <code>.claude/skills/</code> directory and project
-        instructions to your codebase.
+        This adds the <code>.claude/skills/</code> directory and settings
+        to your codebase.
       </p>
 
-      <h3>2. Open Claude Code</h3>
+      <h3>2. Add the Evergreen section to CLAUDE.md</h3>
+      <p>
+        If you already have a <code>CLAUDE.md</code>, copy the content between
+        the <code>&lt;!-- EVERGREEN:START --&gt;</code> and{" "}
+        <code>&lt;!-- EVERGREEN:END --&gt;</code> markers from the{" "}
+        <a href="https://github.com/bobbydotdesign/evergreen/blob/main/CLAUDE.md" target="_blank" rel="noopener noreferrer">
+          template CLAUDE.md
+        </a>{" "}
+        into yours. Your existing instructions go below the end marker.
+      </p>
+      <p>
+        If you don&apos;t have a <code>CLAUDE.md</code> yet, copy the whole file:
+      </p>
+      <CodeBlock>{`cp /tmp/evergreen/CLAUDE.md CLAUDE.md`}</CodeBlock>
+
+      <h3>3. Open Claude Code</h3>
       <p>Start Claude Code in your project:</p>
       <CodeBlock>claude</CodeBlock>
       <p>
-        All skills (<code>/prd</code>, <code>/research</code>,{" "}
-        <code>/design</code>, <code>/wireframe</code>, <code>/ship</code>, etc.)
-        are immediately available. You may want to edit <code>CLAUDE.md</code> to
-        match your project&apos;s stack and conventions.
+        All skills (<code>/ev-prd</code>, <code>/ev-research</code>,{" "}
+        <code>/ev-design</code>, <code>/ev-wireframe</code>, <code>/ev-ship</code>, etc.)
+        are immediately available. Add your project-specific instructions
+        below the <code>&lt;!-- EVERGREEN:END --&gt;</code> marker in{" "}
+        <code>CLAUDE.md</code>.
       </p>
 
       <hr />

@@ -5,7 +5,7 @@ import { CodeBlock } from "@/components/docs/code-block";
 export default function ShipDocs() {
   return (
     <DocsContent>
-      <h1>/ship</h1>
+      <h1>/ev-ship</h1>
       <p>
         Deploy your project to Vercel and optionally set up feedback collection.
         One command to go from local prototype to a live URL you can share.
@@ -19,7 +19,7 @@ export default function ShipDocs() {
       </ul>
 
       <h2>How to use it</h2>
-      <CodeBlock>/ship</CodeBlock>
+      <CodeBlock>/ev-ship</CodeBlock>
       <p>
         Claude checks that your project builds cleanly, then deploys to Vercel.
         If this is your first deploy, it walks you through linking to a Vercel
@@ -28,7 +28,7 @@ export default function ShipDocs() {
       <p>
         For production deploys:
       </p>
-      <CodeBlock>/ship to production</CodeBlock>
+      <CodeBlock>/ev-ship to production</CodeBlock>
 
       <h2>Feedback collection</h2>
       <p>
@@ -61,8 +61,8 @@ export default function ShipDocs() {
       <h2>What to do next</h2>
       <p>
         Share your deploy URL and collect feedback. Use the insights to iterate —
-        run <Link href="/docs/skills/design"><code>/design</code></Link> to
-        refine based on what you learn, then <code>/ship</code> again.
+        run <Link href="/docs/skills/design"><code>/ev-design</code></Link> to
+        refine based on what you learn, then <code>/ev-ship</code> again.
       </p>
     </DocsContent>
   );

@@ -5,7 +5,7 @@ import { CodeBlock } from "@/components/docs/code-block";
 export default function FigmaDocs() {
   return (
     <DocsContent>
-      <h1>/figma</h1>
+      <h1>/ev-figma</h1>
       <p>
         Pull designs from Figma, extract tokens, translate them to code, and
         sync component mappings. This skill requires{" "}
@@ -30,7 +30,7 @@ export default function FigmaDocs() {
 
       <h3>Inspect</h3>
       <p>Analyze a Figma design without building anything:</p>
-      <CodeBlock>/figma inspect</CodeBlock>
+      <CodeBlock>/ev-figma inspect</CodeBlock>
       <p>
         Claude captures the design, summarizes the layout, spacing, colors, and
         typography, then maps Figma tokens to your project&apos;s design
@@ -39,7 +39,7 @@ export default function FigmaDocs() {
 
       <h3>Build</h3>
       <p>Translate a Figma design directly into code:</p>
-      <CodeBlock>/figma build</CodeBlock>
+      <CodeBlock>/ev-figma build</CodeBlock>
       <p>
         Claude inspects the design, then creates the component or page in code
         using shadcn/ui primitives and your design tokens. It matches the Figma
@@ -48,7 +48,7 @@ export default function FigmaDocs() {
 
       <h3>Sync</h3>
       <p>Push component mappings back to Figma:</p>
-      <CodeBlock>/figma sync</CodeBlock>
+      <CodeBlock>/ev-figma sync</CodeBlock>
       <p>
         Claude checks for code-connect suggestions, reviews them with you, and
         pushes the mappings to Figma so your design file knows which code
@@ -57,7 +57,7 @@ export default function FigmaDocs() {
 
       <h3>Variables</h3>
       <p>Compare Figma variables with your CSS tokens:</p>
-      <CodeBlock>/figma variables</CodeBlock>
+      <CodeBlock>/ev-figma variables</CodeBlock>
       <p>
         Claude pulls your Figma variables and shows a diff: what&apos;s in
         Figma but not in code, and vice versa. It offers to update{" "}
@@ -74,9 +74,9 @@ export default function FigmaDocs() {
       <h2>What to do next</h2>
       <p>
         After building from Figma, use{" "}
-        <Link href="/docs/skills/design"><code>/design refine</code></Link> to
+        <Link href="/docs/skills/design"><code>/ev-design refine</code></Link> to
         polish the output, or{" "}
-        <Link href="/docs/skills/ship"><code>/ship</code></Link> to deploy.
+        <Link href="/docs/skills/ship"><code>/ev-ship</code></Link> to deploy.
       </p>
     </DocsContent>
   );

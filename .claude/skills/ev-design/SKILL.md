@@ -7,19 +7,19 @@ argument-hint: "[component or page description]"
 
 ### Modes
 
-**Component mode** — `/design button variants` or `/design a pricing card`
+**Component mode** — `/ev-designbutton variants` or `/ev-designa pricing card`
 - Create or modify components in `src/components/`
 - Use shadcn/ui primitives as building blocks
 - Follow the existing design system tokens (colors, spacing, radius)
 - Export from a clean file with props interface
 
-**Page mode** — `/design the landing page` or `/design settings page`
+**Page mode** — `/ev-designthe landing page` or `/ev-designsettings page`
 - Create full page layouts in `src/app/`
 - Use existing components, create new ones as needed
 - Ensure responsive design (mobile-first)
 - Include proper metadata
 
-**Refine mode** — `/design refine the header`
+**Refine mode** — `/ev-designrefine the header`
 - Read the existing component, analyze it
 - Suggest and apply improvements (spacing, hierarchy, contrast, alignment)
 - Explain design rationale for changes
@@ -27,7 +27,7 @@ argument-hint: "[component or page description]"
 ### Design Approach
 - Read `globals.css` to understand the current design system tokens before building
 - If `docs/design-system.md` exists, follow those conventions
-- If no design system has been configured yet, suggest running `/design-system` first or use the shadcn defaults
+- If no design system has been configured yet, suggest running `/ev-designsystem` first or use the shadcn defaults
 - Respect the project's existing visual language — extend what's there
 
 ### Technical Guidelines

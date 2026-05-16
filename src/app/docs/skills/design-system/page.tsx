@@ -5,11 +5,11 @@ import { CodeBlock } from "@/components/docs/code-block";
 export default function DesignSystemDocs() {
   return (
     <DocsContent>
-      <h1>/design-system</h1>
+      <h1>/ev-designsystem</h1>
       <p>
         Configure the visual foundation of your project: colors, typography,
         spacing, and component conventions. Everything you build with{" "}
-        <code>/design</code> and <code>/wireframe</code> uses these tokens.
+        <code>/ev-design</code> and <code>/ev-wireframe</code> uses these tokens.
       </p>
 
       <h2>When to use this</h2>
@@ -23,7 +23,7 @@ export default function DesignSystemDocs() {
 
       <h3>Setup</h3>
       <p>Run the full design system configuration:</p>
-      <CodeBlock>/design-system</CodeBlock>
+      <CodeBlock>/ev-designsystem</CodeBlock>
       <p>
         Claude walks you through choosing colors, typography, spacing, and
         radius. It generates all the CSS variables in{" "}
@@ -33,13 +33,13 @@ export default function DesignSystemDocs() {
 
       <h3>Update</h3>
       <p>Modify a specific part of the system:</p>
-      <CodeBlock>/design-system colors</CodeBlock>
-      <CodeBlock>/design-system typography</CodeBlock>
+      <CodeBlock>/ev-designsystem colors</CodeBlock>
+      <CodeBlock>/ev-designsystem typography</CodeBlock>
       <p>Changes only the aspect you specify without re-running the full setup.</p>
 
       <h3>Audit</h3>
       <p>Scan your codebase for violations:</p>
-      <CodeBlock>/design-system audit</CodeBlock>
+      <CodeBlock>/ev-designsystem audit</CodeBlock>
       <p>
         Claude checks for hardcoded colors, inconsistent spacing, typography
         outside the scale, and components not using <code>cn()</code>. It
@@ -48,7 +48,7 @@ export default function DesignSystemDocs() {
 
       <h3>Export</h3>
       <p>Generate a summary of your current design system:</p>
-      <CodeBlock>/design-system export</CodeBlock>
+      <CodeBlock>/ev-designsystem export</CodeBlock>
       <p>
         Creates <code>docs/design-system.md</code> documenting all tokens,
         colors, type scale, and spacing values.
@@ -57,9 +57,9 @@ export default function DesignSystemDocs() {
       <h2>What to do next</h2>
       <p>
         With your design system set, run{" "}
-        <Link href="/docs/skills/wireframe"><code>/wireframe</code></Link> to
+        <Link href="/docs/skills/wireframe"><code>/ev-wireframe</code></Link> to
         prototype or{" "}
-        <Link href="/docs/skills/design"><code>/design</code></Link> to build
+        <Link href="/docs/skills/design"><code>/ev-design</code></Link> to build
         polished components.
       </p>
     </DocsContent>

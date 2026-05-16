@@ -6,9 +6,9 @@ argument-hint: "[app or screen description]"
 The user wants a fast, working prototype — not a polished product. Speed matters more than perfection.
 
 ### Usage
-- `/wireframe a todo app` — generate a full wireframe prototype
-- `/wireframe login and signup flow` — specific screens/flows
-- `/wireframe iterate on the dashboard` — refine an existing prototype
+- `/ev-wireframe a todo app` — generate a full wireframe prototype
+- `/ev-wireframe login and signup flow` — specific screens/flows
+- `/ev-wireframe iterate on the dashboard` — refine an existing prototype
 
 ### Process
 1. **Parse the request** — identify the screens, flows, and key interactions needed
@@ -40,6 +40,6 @@ src/components/
 - List all screens created with brief descriptions
 - Offer to:
   - Iterate on any screen
-  - Convert wireframes to high-fidelity with `/design`
+  - Convert wireframes to high-fidelity with `/ev-design`
   - Export to Figma for further design work
-  - Generate a PRD from the prototype with `/prd`
+  - Generate a PRD from the prototype with `/ev-prd`

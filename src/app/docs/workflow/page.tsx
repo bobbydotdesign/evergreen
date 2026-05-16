@@ -4,49 +4,49 @@ import { Badge } from "@/components/ui/badge";
 
 const steps = [
   {
-    cmd: "/prd",
+    cmd: "/ev-prd",
     title: "Define",
     description:
       "Start by describing what you want to build. Claude generates a structured product requirements document covering goals, features, user flows, and scope.",
     href: "/docs/skills/prd",
   },
   {
-    cmd: "/research",
+    cmd: "/ev-research",
     title: "Research",
     description:
       "Validate your idea against the market. Claude searches for competitors, analyzes their strengths and weaknesses, and identifies design opportunities.",
     href: "/docs/skills/research",
   },
   {
-    cmd: "/design-system",
+    cmd: "/ev-designsystem",
     title: "Foundation",
     description:
       "Set your visual identity. Configure colors, typography, spacing, and component styles. This becomes the source of truth for everything you build.",
     href: "/docs/skills/design-system",
   },
   {
-    cmd: "/wireframe",
+    cmd: "/ev-wireframe",
     title: "Prototype",
     description:
       "Rapidly generate interactive wireframes. Claude creates pages, navigation, and basic interactions from your PRD. Speed over perfection.",
     href: "/docs/skills/wireframe",
   },
   {
-    cmd: "/design",
+    cmd: "/ev-design",
     title: "Refine",
     description:
       "Polish your wireframes into high-fidelity UI. Create new components, improve layouts, and fine-tune visual hierarchy using the design system.",
     href: "/docs/skills/design",
   },
   {
-    cmd: "/figma",
+    cmd: "/ev-figma",
     title: "Sync (optional)",
     description:
       "If you work in Figma, pull designs into code or push component mappings back. This step is optional — you can build entirely in code.",
     href: "/docs/skills/figma",
   },
   {
-    cmd: "/ship",
+    cmd: "/ev-ship",
     title: "Deploy",
     description:
       "Ship your prototype to Vercel with one command. Optionally set up a feedback widget or page to collect responses from testers.",
@@ -101,7 +101,7 @@ export default function Workflow() {
           wireframe? Go for it.
         </li>
         <li>
-          Skills are aware of each other. If a PRD exists, <code>/wireframe</code>{" "}
+          Skills are aware of each other. If a PRD exists, <code>/ev-wireframe</code>{" "}
           will use it as context.
         </li>
         <li>

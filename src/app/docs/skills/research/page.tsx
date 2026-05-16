@@ -5,7 +5,7 @@ import { CodeBlock } from "@/components/docs/code-block";
 export default function ResearchDocs() {
   return (
     <DocsContent>
-      <h1>/research</h1>
+      <h1>/ev-research</h1>
       <p>
         Conduct competitive analysis, market research, and user insight
         gathering. Claude searches the web for real data and synthesizes it into
@@ -20,15 +20,15 @@ export default function ResearchDocs() {
       </ul>
 
       <h2>How to use it</h2>
-      <CodeBlock>/research</CodeBlock>
+      <CodeBlock>/ev-research</CodeBlock>
       <p>
         Claude will ask what you want to research. You can give it a broad topic
         or a specific question:
       </p>
       <ul>
-        <li><code>/research habit tracking apps</code> — broad market overview</li>
-        <li><code>/research how does Linear handle project views</code> — specific competitor deep-dive</li>
-        <li><code>/research how do freelancers manage invoicing</code> — user behavior research</li>
+        <li><code>/ev-research habit tracking apps</code> — broad market overview</li>
+        <li><code>/ev-research how does Linear handle project views</code> — specific competitor deep-dive</li>
+        <li><code>/ev-research how do freelancers manage invoicing</code> — user behavior research</li>
       </ul>
 
       <h2>What it creates</h2>
@@ -50,7 +50,7 @@ export default function ResearchDocs() {
       <h2>What to do next</h2>
       <p>
         Use your findings to refine the PRD, then run{" "}
-        <Link href="/docs/skills/wireframe"><code>/wireframe</code></Link> to
+        <Link href="/docs/skills/wireframe"><code>/ev-wireframe</code></Link> to
         start prototyping based on what you learned.
       </p>
     </DocsContent>

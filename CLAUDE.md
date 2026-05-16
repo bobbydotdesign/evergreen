@@ -1,7 +1,6 @@
-# Evergreen — Agentic Design Framework
+<!-- EVERGREEN:START — managed by /ev-update, do not edit below this line -->
 
-## Project Overview
-An agentic design framework for product designers. Built on Next.js, shadcn/ui, Tailwind CSS, and Geist font. Go from idea to deployed prototype using Claude Code.
+# Evergreen Framework
 
 ## Stack
 - **Framework**: Next.js (App Router, TypeScript)
@@ -9,7 +8,6 @@ An agentic design framework for product designers. Built on Next.js, shadcn/ui, 
 - **Components**: shadcn/ui
 - **Font**: Geist Sans + Geist Mono (via next/font)
 - **Deploy**: Vercel
-- **Theme**: Dark mode by default
 
 ## Project Structure
 ```
@@ -26,35 +24,39 @@ docs/
   design-system.md  <- Design system docs (created by /design-system)
 .claude/
   skills/
-    prd/SKILL.md           <- Product requirements generator
-    research/SKILL.md      <- Market & competitive research
-    design/SKILL.md        <- UI components and pages
-    design-system/SKILL.md <- Colors, typography, spacing
-    wireframe/SKILL.md     <- Rapid prototyping
-    figma/SKILL.md         <- Figma-to-code workflow
-    ship/SKILL.md          <- Deploy to Vercel
+    ev-prd/SKILL.md           <- Product requirements generator
+    ev-research/SKILL.md      <- Market & competitive research
+    ev-design/SKILL.md        <- UI components and pages
+    ev-designsystem/SKILL.md  <- Colors, typography, spacing
+    ev-wireframe/SKILL.md     <- Rapid prototyping
+    ev-figma/SKILL.md         <- Figma-to-code workflow
+    ev-ship/SKILL.md          <- Deploy to Vercel
+    ev-update/SKILL.md        <- Update Evergreen
+    ev-help/SKILL.md          <- Show all skills
 ```
 
-## Design System Conventions
+## Coding Conventions
 - Use Tailwind theme tokens (`bg-primary`, `text-muted-foreground`, etc.) — never hardcode colors
 - Use CSS variables defined in `globals.css` for custom values
 - Use `cn()` from `@/lib/utils` for conditional class merging
 - Use shadcn/ui components as building blocks — don't rebuild existing primitives
 - Mobile-first responsive design: 375px -> 768px -> 1280px
 - Server components by default; add `"use client"` only when needed
-- Dark mode is the default (set on `<html>` via `dark` class)
 
 ## Skills
-- `/prd` — Generate a product requirements document
-- `/research` — Conduct market and competitive research
-- `/design` — Create and refine UI components and pages
-- `/design-system` — Configure colors, typography, spacing, and audit consistency
-- `/wireframe` — Rapid low-fi prototyping
-- `/figma` — Pull designs from Figma, extract tokens, sync components
-- `/ship` — Deploy to Vercel and set up feedback
+All Evergreen skills are prefixed with `ev-`. Type `ev-` to see them all.
+- `/ev-prd` — Generate a product requirements document
+- `/ev-research` — Conduct market and competitive research
+- `/ev-design` — Create and refine UI components and pages
+- `/ev-designsystem` — Configure colors, typography, spacing, and audit consistency
+- `/ev-wireframe` — Rapid low-fi prototyping
+- `/ev-figma` — Pull designs from Figma, extract tokens, sync components
+- `/ev-ship` — Deploy to Vercel and set up feedback
+- `/ev-update` — Update Evergreen to the latest version
+- `/ev-help` — Show all skills and the recommended workflow
 
 ## Figma MCP Integration
-This project supports Figma MCP via the `/figma` skill. Available MCP tools:
+This project supports Figma MCP via the `/ev-figma` skill. Available MCP tools:
 - `mcp__figma__get_design_context` — Inspect Figma designs for layout, spacing, colors
 - `mcp__figma__get_screenshot` — Capture Figma frames as reference
 - `mcp__figma__get_code_connect_suggestions` — Map Figma components to code
@@ -70,9 +72,21 @@ When translating from Figma: extract tokens, map to the design system variables,
 - Commit only when explicitly asked
 
 ## Workflow
-1. Start with `/prd` to define what you're building
-2. Run `/research` to validate assumptions
-3. Run `/design-system` to set your visual foundation
-4. Use `/wireframe` to quickly prototype screens
-5. Refine with `/design` (and `/figma` when working from Figma files)
-6. Deploy with `/ship` when ready for feedback
+1. Start with `/ev-prd` to define what you're building
+2. Run `/ev-research` to validate assumptions
+3. Run `/ev-designsystem` to set your visual foundation
+4. Use `/ev-wireframe` to quickly prototype screens
+5. Refine with `/ev-design` (and `/ev-figma` when working from Figma files)
+6. Deploy with `/ev-ship` when ready for feedback
+
+<!-- EVERGREEN:END — add your project instructions below -->
+
+# Project Instructions
+
+## Design System
+- **Theme**: Dark mode by default (set on `<html>` via `dark` class)
+- **Colors**: Neutral palette (configured in `globals.css`)
+- **Font**: Geist Sans + Geist Mono
+- **Radius**: 0.625rem
+
+Run `/ev-designsystem` to customize these choices for your project.

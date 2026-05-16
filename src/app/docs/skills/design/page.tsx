@@ -5,7 +5,7 @@ import { CodeBlock } from "@/components/docs/code-block";
 export default function DesignDocs() {
   return (
     <DocsContent>
-      <h1>/design</h1>
+      <h1>/ev-design</h1>
       <p>
         Create, refine, and implement UI components and pages using the
         project&apos;s design system. This is your main tool for turning
@@ -23,7 +23,7 @@ export default function DesignDocs() {
 
       <h3>Component mode</h3>
       <p>Create or modify individual components:</p>
-      <CodeBlock>/design a pricing card with three tiers</CodeBlock>
+      <CodeBlock>/ev-design a pricing card with three tiers</CodeBlock>
       <p>
         Claude builds the component using shadcn/ui primitives and your design
         system tokens. Components are saved to <code>src/components/</code>.
@@ -31,7 +31,7 @@ export default function DesignDocs() {
 
       <h3>Page mode</h3>
       <p>Build full page layouts:</p>
-      <CodeBlock>/design the settings page</CodeBlock>
+      <CodeBlock>/ev-design the settings page</CodeBlock>
       <p>
         Claude creates the page with responsive layout, proper metadata, and
         reuses existing components where possible.
@@ -39,7 +39,7 @@ export default function DesignDocs() {
 
       <h3>Refine mode</h3>
       <p>Improve existing UI:</p>
-      <CodeBlock>/design refine the header</CodeBlock>
+      <CodeBlock>/ev-design refine the header</CodeBlock>
       <p>
         Claude reads the existing component, analyzes it, suggests improvements
         for spacing, hierarchy, and contrast, then applies the changes.
@@ -57,9 +57,9 @@ export default function DesignDocs() {
 
       <h2>What to do next</h2>
       <p>
-        Run <Link href="/docs/skills/ship"><code>/ship</code></Link> to deploy
+        Run <Link href="/docs/skills/ship"><code>/ev-ship</code></Link> to deploy
         your design, or use{" "}
-        <Link href="/docs/skills/figma"><code>/figma</code></Link> to sync
+        <Link href="/docs/skills/figma"><code>/ev-figma</code></Link> to sync
         with Figma.
       </p>
     </DocsContent>

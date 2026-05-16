@@ -48,4 +48,4 @@ Guidelines:
 - Highlight design opportunities — this is for a product designer
 - If a PRD exists in `docs/prd.md`, cross-reference findings with it
 - Offer to update the PRD based on research findings
-- Suggest running `/wireframe` to start prototyping based on insights
+- Suggest running `/ev-wireframe` to start prototyping based on insights

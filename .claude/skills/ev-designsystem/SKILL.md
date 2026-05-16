@@ -5,7 +5,7 @@ argument-hint: "[setup | colors | typography | audit | export]"
 
 ### Modes
 
-**Setup** — `/design-system setup` or `/design-system` (first time)
+**Setup** — `/ev-designsystem setup` or `/ev-designsystem` (first time)
 Walk the user through configuring their design system:
 
 1. **Colors** — Ask for a primary brand color or palette direction (warm, cool, vibrant, muted, monochrome). Generate a full semantic color set:
@@ -30,10 +30,12 @@ Walk the user through configuring their design system:
 
 Save a summary to `docs/design-system.md`.
 
-**Update** — `/design-system colors`, `/design-system typography`, etc.
+After setup or any design change, update the **Design System** section in `CLAUDE.md` below the `<!-- EVERGREEN:END -->` marker with the user's choices (theme mode, colors, font, radius). This ensures Claude always knows the current design decisions and they survive Evergreen updates.
+
+**Update** — `/ev-designsystem colors`, `/ev-designsystem typography`, etc.
 Modify a specific aspect without re-running the full setup.
 
-**Audit** — `/design-system audit`
+**Audit** — `/ev-designsystem audit`
 Scan the codebase for design system violations:
 - Hardcoded colors (hex, rgb, oklch not using CSS variables)
 - Inconsistent spacing (arbitrary values instead of the scale)
@@ -41,7 +43,7 @@ Scan the codebase for design system violations:
 - Components not using `cn()` for class merging
 Report findings and offer to fix them.
 
-**Export** — `/design-system export`
+**Export** — `/ev-designsystem export`
 Generate a summary of the current design system:
 - All CSS variables with their values
 - Color swatches (light + dark)
