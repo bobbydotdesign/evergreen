@@ -108,6 +108,12 @@ export function DocsSidebar({ className }: { className?: string }) {
           {" "}&copy; 2026
         </p>
         <div className="flex items-center gap-3">
+          <Link
+            href="/brand"
+            className="transition-colors hover:text-foreground"
+          >
+            Brand
+          </Link>
           <a
             href="https://github.com/bobbydotdesign/evergreen"
             target="_blank"
@@ -116,12 +122,6 @@ export function DocsSidebar({ className }: { className?: string }) {
           >
             GitHub
           </a>
-          <Link
-            href="/brand"
-            className="transition-colors hover:text-foreground"
-          >
-            Brand
-          </Link>
           <span>MIT License</span>
         </div>
       </div>
