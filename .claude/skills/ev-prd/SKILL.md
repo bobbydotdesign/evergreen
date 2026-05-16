@@ -1,11 +1,47 @@
 ---
 description: Generate a product requirements document from a brief. Use when the user wants to define what they're building, create a PRD, or plan a product.
-argument-hint: "[product idea]"
+argument-hint: "[product idea | guided | research-first | refine]"
 ---
 
-Guide the user through creating a product requirements document. If they provide a brief, generate the full PRD immediately. If not, ask for a one-liner about what they're building.
+### Context Detection
 
-Generate a PRD using this structure and save it to `docs/prd.md`:
+Before starting, check for existing files:
+- If `docs/prd.md` exists, mention it and offer **Refine** mode
+- If `docs/research.md` exists, note that research is available to inform the PRD
+- If the user provides an argument, route to the matching mode below
+
+### Modes
+
+**Guided** — default when no argument is provided (or `/ev-prd guided`)
+Walk through product thinking one question at a time:
+
+1. What are you building, in one sentence?
+2. Who is this for, and what's their current pain?
+3. What does success look like — how will you know it's working?
+4. What are the 3-5 core features for a first version?
+5. What are you explicitly NOT building yet?
+
+After gathering answers, offer to run a quick research pass (WebSearch for 2-3 competitors and key market signals) before generating the PRD. The user can accept or skip. If they accept, weave findings into the Problem Statement and Technical Considerations sections.
+
+Then generate the full PRD and save to `docs/prd.md`.
+
+**Quick** — `/ev-prd a habit tracking app for runners`
+User provides a product brief as the argument. Generate the full PRD immediately. No questions, no research — just output.
+
+**Research-first** — `/ev-prd research-first [topic]`
+1. Run the `/ev-research` skill first to gather competitive analysis and market data
+2. Once research is saved to `docs/research.md`, generate a PRD grounded in those findings
+3. Reference specific competitors, gaps, and opportunities from the research throughout the PRD
+
+**Refine** — `/ev-prd refine` or when `docs/prd.md` already exists
+1. Read the existing `docs/prd.md` (or accept rough notes pasted inline)
+2. Analyze for gaps: missing sections, vague goals, undefined users, unscoped features
+3. Present a brief assessment of what's strong and what needs work
+4. Improve the PRD section by section, confirming changes with the user
+
+### PRD Template
+
+Save to `docs/prd.md`:
 
 ```markdown
 # [Product Name] — PRD
@@ -47,8 +83,8 @@ Unresolved decisions that need input.
 Rough phases: Design → Build → Test → Launch
 ```
 
-After generating:
-- Save to `docs/prd.md`
+### After Generating
 - Create the `docs/` directory if it doesn't exist
+- Save to `docs/prd.md`
 - Offer to refine any section
-- Suggest running `/ev-research` to validate assumptions
+- Suggest next step: `/ev-research` (if not already done) or `/ev-designsystem`

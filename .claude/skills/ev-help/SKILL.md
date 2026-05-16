@@ -15,7 +15,7 @@ Display the following information to the user in a clean, readable format:
 
 | Skill | What it does |
 |-------|-------------|
-| `/ev-prd` | Generate a product requirements document from an idea |
+| `/ev-prd` | Define what you're building — guided, quick, research-first, or refine |
 | `/ev-research` | Competitive analysis, market research, and user insights |
 | `/ev-design` | Create and refine UI components and pages |
 | `/ev-designsystem` | Configure colors, typography, spacing, and audit consistency |
