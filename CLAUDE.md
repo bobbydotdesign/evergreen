@@ -84,9 +84,12 @@ When translating from Figma: extract tokens, map to the design system variables,
 # Project Instructions
 
 ## Design System
-- **Theme**: Dark mode by default (set on `<html>` via `dark` class)
-- **Colors**: Neutral palette (configured in `globals.css`)
-- **Font**: Geist Sans + Geist Mono
-- **Radius**: 0.625rem
-
-Run `/ev-designsystem` to customize these choices for your project.
+- **Mode**: Dark only (`dark` class on `<html>`)
+- **Palette**: Neutral with warm olive undertone (oklch hue ~110)
+- **Brand accent**: `#EAFC4E` (chartreuse) — `--color-evergreen` / `text-evergreen`
+- **Font**: Geist Sans (UI) + Geist Mono (code)
+- **Radius**: 0 on UI components (brand override), rounded on code blocks
+- **Transitions**: 300ms ease-out on all interactive elements
+- **Core color tokens**: background, foreground, muted, muted-foreground, border, primary
+- **Type scale**: Hero, Section heading, Label, Subheading, Body, Mono, Caption
+- **Full reference**: `docs/design-system.md` and `/brand` page
