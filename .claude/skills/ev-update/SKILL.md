@@ -18,12 +18,24 @@ Update the Evergreen skills and configuration from GitHub. Follow these steps ex
 
 2. **Compare versions**. If the remote version matches the local version above, tell the user they're already up to date and stop.
 
-3. **If an update is available**, tell the user what version they're on and what the latest is, then proceed:
-
-4. **Clone the latest Evergreen to a temp directory**:
+3. **Clone the latest Evergreen to a temp directory**:
    ```bash
    git clone --depth 1 https://github.com/bobbydotdesign/evergreen.git /tmp/evergreen-update
    ```
+
+4. **Show what's new** — Read the commit log from the cloned repo:
+   ```bash
+   cd /tmp/evergreen-update && git log --oneline --no-decorate -20 -- .claude/ CLAUDE.md
+   ```
+
+   Present a clean summary to the user using AskUserQuestion:
+   - question: "Evergreen [current] → [latest] — here's what's new:\n\n[list key changes as bullet points, summarized from commit messages]\n\nProceed with update?"
+   - header: "Update"
+   - options:
+     - label: "Update now", description: "Apply the update and refresh skills"
+     - label: "Skip", description: "Stay on current version"
+
+   If the user chooses **Skip**, clean up `/tmp/evergreen-update` and stop.
 
 5. **Back up the current skills**:
    ```bash
@@ -58,7 +70,11 @@ Update the Evergreen skills and configuration from GitHub. Follow these steps ex
    rm -rf /tmp/evergreen-update .claude/skills.backup .claude/VERSION.backup
    ```
 
-9. **Report** what was updated and suggest restarting Claude Code to load the new skills.
+9. **Confirm completion** — Display a clean summary:
+   - "Evergreen updated to [version]"
+   - List what was updated (skills, CLAUDE.md, settings, etc.)
+   - Note that user content in CLAUDE.md and settings.local.json were preserved
+   - Suggest restarting Claude Code to load the new skills
 
 Important:
 - NEVER touch content below the `<!-- EVERGREEN:END -->` marker — that belongs to the user
