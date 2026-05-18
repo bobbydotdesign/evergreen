@@ -100,20 +100,20 @@ export default function SkillsOverview() {
       <SkillGrid
         skills={[
           {
-            cmd: "/ev-designsystem",
-            title: "Design System",
-            summary:
-              "Configure colors, typography, spacing, and radius. Audit your codebase for inconsistencies. Export a design system doc.",
-            output: "globals.css + docs/design-system.md",
-            href: "/docs/skills/design-system",
-          },
-          {
             cmd: "/ev-wireframe",
             title: "Rapid Prototype",
             summary:
               "Generate interactive wireframes from a description. Creates pages with navigation, forms, and placeholder content. Speed over polish.",
             output: "src/app/ + src/components/wireframe/",
             href: "/docs/skills/wireframe",
+          },
+          {
+            cmd: "/ev-designsystem",
+            title: "Design System",
+            summary:
+              "Configure colors, typography, spacing, and radius. Audit your codebase for inconsistencies. Export a design system doc.",
+            output: "globals.css + docs/design-system.md",
+            href: "/docs/skills/design-system",
           },
           {
             cmd: "/ev-design",

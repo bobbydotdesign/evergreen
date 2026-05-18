@@ -29,8 +29,8 @@ Display the following information to the user in a clean, readable format:
 
 1. **Define** — `/ev-prd` to create a product requirements doc
 2. **Research** — `/ev-research` to validate assumptions
-3. **Foundation** — `/ev-designsystem` to set your visual foundation
-4. **Prototype** — `/ev-wireframe` to quickly build interactive screens
+3. **Prototype** — `/ev-wireframe` to quickly build interactive screens
+4. **Foundation** — `/ev-designsystem` to set your visual foundation
 5. **Refine** — `/ev-design` to polish components and layouts
 6. **Ship** — `/ev-ship` to deploy and collect feedback
 

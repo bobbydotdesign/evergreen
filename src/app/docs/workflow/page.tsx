@@ -18,18 +18,18 @@ const steps = [
     href: "/docs/skills/research",
   },
   {
-    cmd: "/ev-designsystem",
-    title: "Foundation",
-    description:
-      "Set your visual identity. Configure colors, typography, spacing, and component styles. This becomes the source of truth for everything you build.",
-    href: "/docs/skills/design-system",
-  },
-  {
     cmd: "/ev-wireframe",
     title: "Prototype",
     description:
       "Rapidly generate interactive wireframes. Claude creates pages, navigation, and basic interactions from your PRD. Speed over perfection.",
     href: "/docs/skills/wireframe",
+  },
+  {
+    cmd: "/ev-designsystem",
+    title: "Foundation",
+    description:
+      "Set your visual identity. Configure colors, typography, spacing, and component styles. This becomes the source of truth for everything you build.",
+    href: "/docs/skills/design-system",
   },
   {
     cmd: "/ev-design",
