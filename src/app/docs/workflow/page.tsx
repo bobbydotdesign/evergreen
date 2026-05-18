@@ -25,18 +25,18 @@ const steps = [
     href: "/docs/skills/wireframe",
   },
   {
-    cmd: "/ev-designsystem",
-    title: "Foundation",
-    description:
-      "Set your visual identity. Configure colors, typography, spacing, and component styles. This becomes the source of truth for everything you build.",
-    href: "/docs/skills/design-system",
-  },
-  {
     cmd: "/ev-design",
     title: "Refine",
     description:
-      "Polish your wireframes into high-fidelity UI. Create new components, improve layouts, and fine-tune visual hierarchy using the design system.",
+      "Explore the look. Convert wireframes to high-fidelity UI, create components, and refine layouts. Let the visual direction emerge before locking it down.",
     href: "/docs/skills/design",
+  },
+  {
+    cmd: "/ev-designsystem",
+    title: "Foundation",
+    description:
+      "Formalize what emerged. Extract the colors, typography, and spacing from your designs into a consistent system. Bottom-up — the system follows the design, not the other way around.",
+    href: "/docs/skills/design-system",
   },
   {
     cmd: "/ev-figma",
@@ -101,8 +101,8 @@ export default function Workflow() {
           wireframe? Go for it.
         </li>
         <li>
-          Skills are aware of each other. If a PRD exists, <code>/ev-wireframe</code>{" "}
-          will use it as context.
+          Every skill detects prior work automatically. PRDs, research,
+          wireframes, components — each step picks up where the last left off.
         </li>
         <li>
           Run any skill multiple times to iterate. Each run refines the previous

@@ -2,6 +2,14 @@
 description: Deploy to Vercel and set up feedback collection. Use when the user wants to deploy, ship, publish, or collect user feedback.
 ---
 
+### Context Detection
+Before deploying, check for existing project context:
+- If `docs/prd.md` exists, read it — reference the product name and description for deployment metadata
+- If `docs/research.md` exists, note it's available
+- If `docs/design-system.md` exists, note it's available
+- Scan `src/app/` for pages and `src/components/` for components — summarize what's being shipped so the user has a clear picture of the deployment scope
+- Summarize what you found so the user knows exactly what's going out
+
 ### Deploy to Vercel
 
 1. **Check prerequisites**:

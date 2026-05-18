@@ -3,7 +3,25 @@ description: Conduct competitive analysis, market research, and user insights. U
 argument-hint: "[topic or product area]"
 ---
 
-Ask what the user wants to research if no topic is provided. Accept topics like:
+### Context Detection
+Before starting, check for existing project context:
+- If `docs/prd.md` exists, read it — use the product definition to focus the research on relevant competitors and market segments
+- If wireframe components exist in `src/components/wireframe/` or wireframe pages in `src/app/`, scan them — the prototype reveals what UX patterns to research
+- If design components exist in `src/components/`, scan them — the existing UI shows design directions to compare against competitors
+- If `docs/design-system.md` exists, note the visual direction for competitive comparison
+- Summarize what context you found so the user knows you're building on prior work
+
+If no argument is provided and no context exists, ask the generic "What would you like to research?"
+
+If no argument is provided but a PRD exists, use AskUserQuestion:
+- question: "I found your PRD for [product name]. What would you like to research?"
+- options:
+  - label: "Full competitive analysis", description: "Research competitors, market landscape, and design patterns in this space"
+  - label: "Deep-dive on a competitor", description: "Pick a specific competitor to analyze in detail"
+  - label: "UX patterns research", description: "Find best practices and design patterns for the key user flows"
+  - label: "Something else", description: "Research a different topic"
+
+Accept topics like:
 - A product idea or space (e.g., "habit tracking apps")
 - A specific competitor (e.g., "how does Linear handle project views")
 - A user need (e.g., "how do freelancers manage invoicing")

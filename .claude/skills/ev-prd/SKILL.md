@@ -3,6 +3,14 @@ description: Generate a product requirements document from a brief. Use when the
 argument-hint: "[product idea | guided | research-first | refine]"
 ---
 
+### Context Detection
+Before starting, check for existing project context:
+- If `docs/research.md` exists, read it — use market data and competitor insights to ground the PRD
+- If wireframe components exist in `src/components/wireframe/` or wireframe pages in `src/app/`, read them — the prototype reveals what features and flows the user is already exploring
+- If design components exist in `src/components/`, scan them — the existing UI shows what's been built
+- If `docs/design-system.md` exists, note the visual direction
+- Summarize what context you found so the user knows you're building on prior work
+
 ### Getting Started
 
 If the user provides a product brief as the argument (e.g. `/ev-prd a habit tracking app`), go straight to **Quick** mode.

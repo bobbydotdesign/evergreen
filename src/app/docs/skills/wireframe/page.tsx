@@ -47,6 +47,13 @@ export default function WireframeDocs() {
         <li>Grayscale only — no color until you add it</li>
       </ul>
 
+      <h2>Context awareness</h2>
+      <p>
+        If a PRD or research doc exists, Claude reads them and proposes which
+        screens to build — no need to re-explain your product. If wireframes
+        already exist, it offers to iterate rather than starting fresh.
+      </p>
+
       <h2>What to do next</h2>
       <p>
         Once your wireframes feel right, run{" "}

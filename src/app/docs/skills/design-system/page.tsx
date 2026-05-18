@@ -14,8 +14,8 @@ export default function DesignSystemDocs() {
 
       <h2>When to use this</h2>
       <ul>
-        <li>You&apos;re starting a new project and want to set your brand colors</li>
-        <li>You want to change the font or adjust the spacing scale</li>
+        <li>You&apos;ve designed some screens and want to formalize the visual patterns that emerged</li>
+        <li>You want to change the font, colors, or adjust the spacing scale</li>
         <li>You want to audit your codebase for design inconsistencies</li>
       </ul>
 
@@ -54,13 +54,21 @@ export default function DesignSystemDocs() {
         colors, type scale, and spacing values.
       </p>
 
+      <h2>Context awareness</h2>
+      <p>
+        If design components or wireframes already exist, Claude scans them and
+        extracts the visual patterns that have emerged — colors, spacing, type
+        sizes — and uses those as a starting point. Bottom-up: the system follows
+        the design, not the other way around.
+      </p>
+
       <h2>What to do next</h2>
       <p>
-        With your design system set, run{" "}
-        <Link href="/docs/skills/wireframe"><code>/ev-wireframe</code></Link> to
-        prototype or{" "}
-        <Link href="/docs/skills/design"><code>/ev-design</code></Link> to build
-        polished components.
+        With your design system formalized, run{" "}
+        <Link href="/docs/skills/ship"><code>/ev-ship</code></Link> to deploy.
+        You can also go back to{" "}
+        <Link href="/docs/skills/design"><code>/ev-design</code></Link> to
+        refine components now that the system is locked in.
       </p>
     </DocsContent>
   );

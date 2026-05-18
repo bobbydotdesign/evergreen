@@ -24,10 +24,33 @@ argument-hint: "[component or page description]"
 - Suggest and apply improvements (spacing, hierarchy, contrast, alignment)
 - Explain design rationale for changes
 
+### Context Detection
+Before starting, check for existing project context:
+- If `docs/prd.md` exists, read it — use features and user flows to guide what you build
+- If `docs/research.md` exists, read it — incorporate design opportunities and UX patterns from competitors
+- If wireframe components exist in `src/components/wireframe/` or wireframe pages exist, read them — refine what's already been prototyped rather than starting from scratch
+- Summarize what context you found so the user knows you're building on prior work
+
+If no argument was provided and context exists, use AskUserQuestion to let the user choose:
+
+When wireframes exist:
+- question: "I see wireframes for [screens]. How would you like to proceed?"
+- options:
+  - label: "Refine wireframes to high-fidelity", description: "Upgrade the existing wireframe screens with real styling and polish"
+  - label: "Design a specific component", description: "Build or improve a particular component"
+  - label: "Design a new page", description: "Create a new page layout from scratch"
+
+When no wireframes but PRD exists:
+- question: "I found your PRD for [product name]. What would you like to design?"
+- options:
+  - label: "Design the core screens", description: "Build high-fidelity pages for the main features and flows"
+  - label: "Design a specific component", description: "Build or improve a particular component"
+  - label: "Design a specific page", description: "Create a particular page layout"
+
 ### Design Approach
 - Read `globals.css` to understand the current design system tokens before building
 - If `docs/design-system.md` exists, follow those conventions
-- If no design system has been configured yet, suggest running `/ev-designsystem` first or use the shadcn defaults
+- If no design system has been configured yet, use the shadcn defaults and let the design emerge — the user can formalize with `/ev-designsystem` later
 - Respect the project's existing visual language — extend what's there
 
 ### Technical Guidelines

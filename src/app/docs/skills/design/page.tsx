@@ -55,11 +55,20 @@ export default function DesignDocs() {
         <li><strong>Accessible</strong> — proper contrast, semantic HTML, ARIA labels</li>
       </ul>
 
+      <h2>Context awareness</h2>
+      <p>
+        Claude detects existing work automatically. If wireframes exist, it
+        offers to refine them to high-fidelity. If a PRD or research doc exists,
+        it uses those to guide what it builds. No need to re-explain your product.
+      </p>
+
       <h2>What to do next</h2>
       <p>
-        Run <Link href="/docs/skills/ship"><code>/ev-ship</code></Link> to deploy
-        your design, or use{" "}
-        <Link href="/docs/skills/figma"><code>/ev-figma</code></Link> to sync
+        Once your design direction feels right, run{" "}
+        <Link href="/docs/skills/design-system"><code>/ev-designsystem</code></Link>{" "}
+        to formalize the visual system from what emerged. Then{" "}
+        <Link href="/docs/skills/ship"><code>/ev-ship</code></Link> to deploy,
+        or <Link href="/docs/skills/figma"><code>/ev-figma</code></Link> to sync
         with Figma.
       </p>
     </DocsContent>

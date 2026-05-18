@@ -30,9 +30,11 @@ Display the following information to the user in a clean, readable format:
 1. **Define** — `/ev-prd` to create a product requirements doc
 2. **Research** — `/ev-research` to validate assumptions
 3. **Prototype** — `/ev-wireframe` to quickly build interactive screens
-4. **Foundation** — `/ev-designsystem` to set your visual foundation
-5. **Refine** — `/ev-design` to polish components and layouts
+4. **Refine** — `/ev-design` to explore the look and polish the UI
+5. **Foundation** — `/ev-designsystem` to formalize the visual system from what emerged
 6. **Ship** — `/ev-ship` to deploy and collect feedback
+
+Each skill detects existing work — PRDs, research, wireframes, components — and builds on what's there. No need to explain context manually.
 
 ### Tips
 
