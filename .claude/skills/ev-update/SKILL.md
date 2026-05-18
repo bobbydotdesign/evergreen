@@ -11,13 +11,16 @@ disable-model-invocation: true
 
 Update the Evergreen skills and configuration from GitHub. Follow these steps exactly:
 
-1. **Fetch the latest release** from GitHub:
+1. **Fetch the latest release tag from GitHub Releases** (NOT the VERSION file on main — that may be stale):
    ```bash
-   curl -sf https://api.github.com/repos/bobbydotdesign/evergreen/releases/latest
+   LATEST_JSON=$(curl -sf https://api.github.com/repos/bobbydotdesign/evergreen/releases/latest)
+   LATEST_VERSION=$(echo "$LATEST_JSON" | grep '"tag_name"' | sed 's/.*"v\(.*\)".*/\1/')
+   RELEASE_NOTES=$(echo "$LATEST_JSON" | python3 -c "import sys,json; print(json.load(sys.stdin).get('body',''))" 2>/dev/null)
+   echo "Latest: $LATEST_VERSION"
    ```
-   Extract the `tag_name` (strip the leading `v` to get the version) and the `body` (release notes).
+   You MUST use this GitHub Releases API endpoint. Do NOT fetch `raw.githubusercontent.com/.../VERSION` — that is the wrong source.
 
-2. **Compare versions**. If the latest release version matches the local version above, tell the user they're already up to date and stop.
+2. **Compare versions**. Compare `$LATEST_VERSION` against the local version shown above. If they match, tell the user they're already up to date and stop.
 
 3. **Show what's new** — Present the release notes to the user using AskUserQuestion:
    - question: "Evergreen [current] → [latest]\n\n[release notes from the body field]\n\nProceed with update?"
