@@ -78,22 +78,22 @@ As you work, the roadmap updates automatically — wireframing moves items to in
 
 ## Project Dashboard
 
-Visit `/evergreen` in your browser to see your project at a glance:
+Visit `/ev` in your browser to see your project at a glance:
 
 - **Project summary** pulled from your PRD
 - **What's next** from your roadmap
 - **Status cards** for PRD, research, roadmap, and design system
 - **Project links** — repo, staging, production, Figma
 
-All skill outputs render as rich interactive pages with persistent navigation:
+All skill outputs render as rich interactive pages with persistent navigation. Everything lives under `/ev/` so it never conflicts with your app's routes or layouts:
 
 | Page | What it shows |
 |------|--------------|
-| `/evergreen` | Project dashboard |
-| `/prd` | Product requirements with feature cards and priorities |
-| `/research` | Competitive analysis with competitor cards and insight badges |
-| `/roadmap` | Kanban board — backlog, in progress, done |
-| `/design-system` | Live color swatches, type scale, spacing, component samples |
+| `/ev` | Project dashboard |
+| `/ev/prd` | Product requirements with feature cards and priorities |
+| `/ev/research` | Competitive analysis with competitor cards and insight badges |
+| `/ev/roadmap` | Kanban board — backlog, in progress, done |
+| `/ev/design-system` | Live color swatches, type scale, spacing, component samples |
 
 ## Figma Integration
 
@@ -111,7 +111,7 @@ The project includes a full design system via shadcn/ui:
 - **Components** — Button, Card, Input, Textarea, Badge, Tabs, Dialog, Sheet, Separator, Skeleton
 - **Spacing & Radius** — Consistent scale via CSS variables
 
-Visit `/design-system` in your browser to see a live visual reference of all tokens and components.
+Visit `/ev/design-system` in your browser to see a live visual reference of all tokens and components.
 
 Add more shadcn components anytime:
 
@@ -124,11 +124,11 @@ npx shadcn@latest add [component-name]
 ```
 src/
   app/
-    evergreen/         <- Project dashboard
-    roadmap/           <- Kanban board
-    prd/               <- Product requirements page
-    research/          <- Research page
-    design-system/     <- Visual design system reference
+    ev/                <- Evergreen dashboard (isolated from user app)
+      roadmap/         <- Kanban board
+      prd/             <- Product requirements
+      research/        <- Research findings
+      design-system/   <- Visual design system reference
   components/
     ui/                <- shadcn/ui components
     wireframe/         <- Wireframe components (from /wireframe)
