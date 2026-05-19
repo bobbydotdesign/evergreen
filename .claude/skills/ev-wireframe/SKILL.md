@@ -42,22 +42,26 @@ When wireframes already exist:
 5. **Run the dev server** — offer to start `npm run dev` so they can preview immediately
 
 ### Wireframe Style Guide
-- Use `border-2 border-dashed border-muted` for placeholder/wireframe containers
-- Use `bg-muted` blocks for image placeholders with a label inside
+- Use shadcn/ui components with their default styling — do NOT apply the project's design system, brand colors, or custom theme tokens
+- Do NOT use project-specific classes like `text-evergreen`, brand accents, or custom CSS variables
+- Use `border-2 border-dashed` for placeholder/wireframe containers
+- Use gray background blocks for image placeholders with a label inside
 - Use real text hierarchy (h1, h2, p) but placeholder copy is fine
 - Keep layouts simple — single column on mobile, 2-3 columns on desktop
-- Use shadcn/ui components for interactive elements (buttons, inputs, dialogs)
+- Use shadcn/ui components as-is for interactive elements (buttons, inputs, dialogs, cards)
 - Gray-scale only — no colors unless the user has specified a palette
 
 ### File Structure
 ```
 src/app/
-  page.tsx              <- main screen
+  page.tsx              <- main screen (replaces the starter page)
   [flow]/
     page.tsx            <- additional screens
 src/components/
   wireframe/            <- wireframe-specific components
 ```
+
+The root layout is a clean minimal shell (fonts + Tailwind, no sidebar or docs UI), so wireframe pages render directly without any framework chrome getting in the way.
 
 ### After Generating
 - Start the dev server if not running

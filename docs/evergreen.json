@@ -1,0 +1,74 @@
+{
+  "name": "Evergreen",
+  "tagline": "An opinionated agentic design framework for product designers who use Claude Code.",
+  "url": "https://getever.green",
+  "repo": "https://github.com/bobbydotdesign/evergreen",
+  "stack": [
+    { "name": "Next.js", "detail": "App Router + TypeScript", "url": "https://nextjs.org" },
+    { "name": "shadcn/ui", "detail": "Accessible components", "url": "https://ui.shadcn.com" },
+    { "name": "Tailwind v4", "detail": "Utility-first styling", "url": "https://tailwindcss.com" },
+    { "name": "Geist", "detail": "Clean modern typography", "url": "https://vercel.com/font" },
+    { "name": "Vercel", "detail": "One-command deploys", "url": "https://vercel.com" },
+    { "name": "Figma MCP", "detail": "Design-to-code bridge", "url": "https://www.figma.com/community/plugin/1441950583498498539" }
+  ],
+  "skills": [
+    {
+      "command": "/ev-prd",
+      "title": "Product Requirements",
+      "description": "Generate a structured PRD from a product idea or brief."
+    },
+    {
+      "command": "/ev-research",
+      "title": "Market Research",
+      "description": "Competitive analysis, user insights, and market validation."
+    },
+    {
+      "command": "/ev-wireframe",
+      "title": "Rapid Prototype",
+      "description": "Quick interactive wireframes from a simple description."
+    },
+    {
+      "command": "/ev-design",
+      "title": "Frontend Design",
+      "description": "Create and refine UI components and full page layouts."
+    },
+    {
+      "command": "/ev-figma",
+      "title": "Figma Integration",
+      "description": "Pull designs, extract tokens, and sync components with Figma."
+    },
+    {
+      "command": "/ev-designsystem",
+      "title": "Design System",
+      "description": "Configure colors, typography, spacing, and audit consistency."
+    },
+    {
+      "command": "/ev-ship",
+      "title": "Deploy & Feedback",
+      "description": "Ship to Vercel and set up user feedback collection."
+    }
+  ],
+  "workflow": [
+    { "step": 1, "command": "/ev-prd", "label": "Define what you're building" },
+    { "step": 2, "command": "/ev-research", "label": "Validate assumptions" },
+    { "step": 3, "command": "/ev-wireframe", "label": "Quickly prototype screens" },
+    { "step": 4, "command": "/ev-design", "label": "Refine with high-fidelity design" },
+    { "step": 5, "command": "/ev-designsystem", "label": "Formalize the visual system" },
+    { "step": 6, "command": "/ev-ship", "label": "Deploy for feedback" }
+  ],
+  "quickstart": {
+    "new": [
+      { "title": "Clone the repo", "code": "git clone https://github.com/bobbydotdesign/evergreen.git my-project" },
+      { "title": "Open the project folder", "code": "cd my-project" },
+      { "title": "Install dependencies", "code": "npm install" },
+      { "title": "Start Claude Code", "code": "claude" },
+      { "title": "Start building", "code": "/ev-prd" }
+    ],
+    "existing": [
+      { "title": "Clone Evergreen temporarily", "code": "git clone https://github.com/bobbydotdesign/evergreen.git /tmp/evergreen" },
+      { "title": "Copy the skills into your project", "code": "cp -r /tmp/evergreen/.claude .claude\ncp /tmp/evergreen/CLAUDE.md CLAUDE.md" },
+      { "title": "Clean up", "code": "rm -rf /tmp/evergreen" },
+      { "title": "Open Claude Code", "code": "claude" }
+    ]
+  }
+}

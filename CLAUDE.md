@@ -12,13 +12,17 @@
 ## Project Structure
 ```
 src/
-  app/              <- Pages and layouts (App Router)
+  app/
+    layout.tsx      <- Root layout (clean shell: fonts + Tailwind, no chrome)
+    page.tsx        <- User's app (blank starter)
+    evergreen/      <- Evergreen reference page (reads from docs/evergreen.json)
   components/
     ui/             <- shadcn/ui primitives (button, card, input, etc.)
     wireframe/      <- Wireframe-specific components (created by /wireframe)
   lib/
     utils.ts        <- cn() helper and shared utilities
 docs/
+  evergreen.json    <- Content manifest (single source of truth for skills, workflow, stack)
   prd.md            <- Product requirements (created by /prd)
   research.md       <- Research findings (created by /research)
   design-system.md  <- Design system docs (created by /design-system)
@@ -92,4 +96,4 @@ When translating from Figma: extract tokens, map to the design system variables,
 - **Transitions**: 300ms ease-out on all interactive elements
 - **Core color tokens**: background, foreground, muted, muted-foreground, border, primary
 - **Type scale**: Hero, Section heading, Label, Subheading, Body, Mono, Caption
-- **Full reference**: `docs/design-system.md` and `/brand` page
+- **Full reference**: `docs/design-system.md`
