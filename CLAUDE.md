@@ -16,6 +16,7 @@ src/
     layout.tsx      <- Root layout (clean shell: fonts + Tailwind, no chrome)
     page.tsx        <- User's app (blank starter)
     evergreen/      <- Evergreen reference page (reads from docs/evergreen.json)
+    roadmap/        <- Product roadmap kanban board (reads from docs/roadmap.json)
   components/
     ui/             <- shadcn/ui primitives (button, card, input, etc.)
     wireframe/      <- Wireframe-specific components (created by /wireframe)
@@ -23,9 +24,11 @@ src/
     utils.ts        <- cn() helper and shared utilities
 docs/
   evergreen.json    <- Content manifest (single source of truth for skills, workflow, stack)
-  prd.md            <- Product requirements (created by /prd)
-  research.md       <- Research findings (created by /research)
-  design-system.md  <- Design system docs (created by /design-system)
+  project.json      <- Project config: repo, staging, production, figma URLs
+  prd.json          <- Product requirements (created by /ev-prd)
+  research.json     <- Research findings (created by /ev-research)
+  roadmap.json      <- Product roadmap data (created by /ev-roadmap)
+  design-system.md  <- Design system docs (created by /ev-designsystem)
 .claude/
   skills/
     ev-prd/SKILL.md           <- Product requirements generator
@@ -34,6 +37,7 @@ docs/
     ev-designsystem/SKILL.md  <- Colors, typography, spacing
     ev-wireframe/SKILL.md     <- Rapid prototyping
     ev-figma/SKILL.md         <- Figma-to-code workflow
+    ev-roadmap/SKILL.md       <- Product roadmap kanban board
     ev-ship/SKILL.md          <- Deploy to Vercel
     ev-update/SKILL.md        <- Update Evergreen
     ev-help/SKILL.md          <- Show all skills
@@ -55,6 +59,7 @@ All Evergreen skills are prefixed with `ev-`. Type `ev-` to see them all.
 - `/ev-designsystem` — Configure colors, typography, spacing, and audit consistency
 - `/ev-wireframe` — Rapid low-fi prototyping
 - `/ev-figma` — Pull designs from Figma, extract tokens, sync components
+- `/ev-roadmap` — Manage a product roadmap with kanban board
 - `/ev-ship` — Deploy to Vercel and set up feedback
 - `/ev-update` — Update Evergreen to the latest version
 - `/ev-help` — Show all skills and the recommended workflow
@@ -78,10 +83,11 @@ When translating from Figma: extract tokens, map to the design system variables,
 ## Workflow
 1. Start with `/ev-prd` to define what you're building
 2. Run `/ev-research` to validate assumptions
-3. Use `/ev-wireframe` to quickly prototype screens
-4. Refine with `/ev-design` (and `/ev-figma` when working from Figma files)
-5. Run `/ev-designsystem` to formalize the visual system from what emerged
-6. Deploy with `/ev-ship` when ready for feedback
+3. Run `/ev-roadmap` to plan what to build first
+4. Use `/ev-wireframe` to quickly prototype screens
+5. Refine with `/ev-design` (and `/ev-figma` when working from Figma files)
+6. Run `/ev-designsystem` to formalize the visual system from what emerged
+7. Deploy with `/ev-ship` when ready for feedback
 
 <!-- EVERGREEN:END — add your project instructions below -->
 

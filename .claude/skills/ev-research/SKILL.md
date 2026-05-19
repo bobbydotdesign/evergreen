@@ -5,7 +5,7 @@ argument-hint: "[topic or product area]"
 
 ### Context Detection
 Before starting, check for existing project context:
-- If `docs/prd.md` exists, read it — use the product definition to focus the research on relevant competitors and market segments
+- If `docs/prd.json` exists, read it — use the product definition to focus the research on relevant competitors and market segments
 - If wireframe components exist in `src/components/wireframe/` or wireframe pages in `src/app/`, scan them — the prototype reveals what UX patterns to research
 - If design components exist in `src/components/`, scan them — the existing UI shows design directions to compare against competitors
 - If `docs/design-system.md` exists, note the visual direction for competitive comparison
@@ -26,44 +26,53 @@ Accept topics like:
 - A specific competitor (e.g., "how does Linear handle project views")
 - A user need (e.g., "how do freelancers manage invoicing")
 
-Use WebSearch and WebFetch to gather real data. Structure findings and save to `docs/research.md`:
+Use WebSearch and WebFetch to gather real data.
 
-```markdown
-# Research: [Topic]
+### Output Format
 
-## Summary
-2-3 sentence overview of findings.
+Save to `docs/research.json`:
 
-## Market Landscape
-- Market size / growth indicators
-- Key trends shaping this space
-- Relevant platforms and ecosystems
-
-## Competitive Analysis
-| Product | Strengths | Weaknesses | Pricing | Notable UX |
-|---------|-----------|------------|---------|-------------|
-| ...     | ...       | ...        | ...     | ...         |
-
-## User Insights
-- Common pain points across existing solutions
-- Unmet needs and opportunities
-- Behavioral patterns worth noting
-
-## Design Opportunities
-- Gaps in current offerings
-- UX patterns that work well
-- Potential differentiators
-
-## Key Takeaways
-Numbered list of actionable insights for the product.
-
-## Sources
-Links to sources used.
+```json
+{
+  "title": "Research topic",
+  "summary": "2-3 sentence overview of findings.",
+  "competitors": [
+    {
+      "name": "Competitor Name",
+      "url": "https://competitor.com",
+      "strength": "What they do well",
+      "weakness": "Where they fall short",
+      "pricing": "Free / $X/mo / etc.",
+      "notable_ux": "Specific UX pattern worth noting"
+    }
+  ],
+  "insights": [
+    {
+      "text": "Actionable insight or finding",
+      "type": "insight | warning | opportunity"
+    }
+  ],
+  "opportunities": [
+    "Design opportunity or differentiator"
+  ],
+  "sources": [
+    { "title": "Source name", "url": "https://source.com" }
+  ]
+}
 ```
 
-Guidelines:
+### Page Regeneration
+After writing `docs/research.json`, read the existing `src/app/research/page.tsx` and regenerate it to render the new data. The page is a server component that imports from `@/../docs/research.json` and renders structured sections using shadcn/ui components (Card, Badge). Follow the existing page structure — only add new sections if the JSON schema requires it.
+
+### After Generating
+- Save to `docs/research.json` and regenerate the page
+- Run `npm run dev` (skip if already running)
+- Output: `Research ready → http://localhost:[port]/research`
+- Offer to update the PRD based on research findings
+- Suggest running `/ev-roadmap` to plan what to build or `/ev-wireframe` to start prototyping
+
+### Guidelines
 - Focus on actionable insights, not exhaustive data dumps
 - Highlight design opportunities — this is for a product designer
-- If a PRD exists in `docs/prd.md`, cross-reference findings with it
-- Offer to update the PRD based on research findings
-- Suggest running `/ev-wireframe` to start prototyping based on insights
+- If a PRD exists in `docs/prd.json`, cross-reference findings with it
+- Use `type: "warning"` for risks, `type: "opportunity"` for gaps to exploit, `type: "insight"` for everything else

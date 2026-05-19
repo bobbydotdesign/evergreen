@@ -43,6 +43,11 @@
       "description": "Configure colors, typography, spacing, and audit consistency."
     },
     {
+      "command": "/ev-roadmap",
+      "title": "Product Roadmap",
+      "description": "Track features, bugs, and improvements on a visual kanban board."
+    },
+    {
       "command": "/ev-ship",
       "title": "Deploy & Feedback",
       "description": "Ship to Vercel and set up user feedback collection."
@@ -51,10 +56,11 @@
   "workflow": [
     { "step": 1, "command": "/ev-prd", "label": "Define what you're building" },
     { "step": 2, "command": "/ev-research", "label": "Validate assumptions" },
-    { "step": 3, "command": "/ev-wireframe", "label": "Quickly prototype screens" },
-    { "step": 4, "command": "/ev-design", "label": "Refine with high-fidelity design" },
-    { "step": 5, "command": "/ev-designsystem", "label": "Formalize the visual system" },
-    { "step": 6, "command": "/ev-ship", "label": "Deploy for feedback" }
+    { "step": 3, "command": "/ev-roadmap", "label": "Plan what to build first" },
+    { "step": 4, "command": "/ev-wireframe", "label": "Quickly prototype screens" },
+    { "step": 5, "command": "/ev-design", "label": "Refine with high-fidelity design" },
+    { "step": 6, "command": "/ev-designsystem", "label": "Formalize the visual system" },
+    { "step": 7, "command": "/ev-ship", "label": "Deploy for feedback" }
   ],
   "quickstart": {
     "new": [

@@ -21,6 +21,7 @@ Display the following information to the user in a clean, readable format:
 | `/ev-designsystem` | Configure colors, typography, spacing, and audit consistency |
 | `/ev-wireframe` | Rapid interactive prototyping from a description |
 | `/ev-figma` | Pull designs from Figma, extract tokens, sync components |
+| `/ev-roadmap` | Track features and priorities on a visual kanban board |
 | `/ev-ship` | Deploy to Vercel and set up feedback collection |
 | `/ev-update` | Update Evergreen to the latest version |
 | `/ev-help` | Show this help |
@@ -29,10 +30,11 @@ Display the following information to the user in a clean, readable format:
 
 1. **Define** — `/ev-prd` to create a product requirements doc
 2. **Research** — `/ev-research` to validate assumptions
-3. **Prototype** — `/ev-wireframe` to quickly build interactive screens
-4. **Refine** — `/ev-design` to explore the look and polish the UI
-5. **Foundation** — `/ev-designsystem` to formalize the visual system from what emerged
-6. **Ship** — `/ev-ship` to deploy and collect feedback
+3. **Plan** — `/ev-roadmap` to plan what to build first
+4. **Prototype** — `/ev-wireframe` to quickly build interactive screens
+5. **Refine** — `/ev-design` to explore the look and polish the UI
+6. **Foundation** — `/ev-designsystem` to formalize the visual system from what emerged
+7. **Ship** — `/ev-ship` to deploy and collect feedback
 
 Each skill detects existing work — PRDs, research, wireframes, components — and builds on what's there. No need to explain context manually.
 

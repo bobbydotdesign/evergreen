@@ -26,8 +26,8 @@ argument-hint: "[component or page description]"
 
 ### Context Detection
 Before starting, check for existing project context:
-- If `docs/prd.md` exists, read it — use features and user flows to guide what you build
-- If `docs/research.md` exists, read it — incorporate design opportunities and UX patterns from competitors
+- If `docs/prd.json` exists, read it — use features and user flows to guide what you build
+- If `docs/research.json` exists, read it — incorporate design opportunities and UX patterns from competitors
 - If wireframe components exist in `src/components/wireframe/` or wireframe pages exist, read them — refine what's already been prototyped rather than starting from scratch
 - Summarize what context you found so the user knows you're building on prior work
 
@@ -62,6 +62,11 @@ When no wireframes but PRD exists:
 - Use `buttonVariants()` for link-as-button patterns (no `asChild` — this version of shadcn uses base-ui)
 
 ### After Creating
+
+**Update roadmap** (automatic, silent):
+If `docs/roadmap.json` exists, check if any roadmap items match the components or pages just designed (match by title or description). For each matching item that is currently `backlog`, move it to `in-progress`. If already `in-progress`, leave it. Regenerate `src/app/roadmap/page.tsx` if items were updated. Include a brief note: "Roadmap: moved [item title] to in-progress"
+
+**Then**:
 - Offer to preview by running the dev server
 - Suggest connecting to Figma via MCP to sync the design
 - If a PRD exists, reference it for feature alignment

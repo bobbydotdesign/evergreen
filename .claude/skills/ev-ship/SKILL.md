@@ -4,8 +4,8 @@ description: Deploy to Vercel and set up feedback collection. Use when the user 
 
 ### Context Detection
 Before deploying, check for existing project context:
-- If `docs/prd.md` exists, read it — reference the product name and description for deployment metadata
-- If `docs/research.md` exists, note it's available
+- If `docs/prd.json` exists, read it — reference the product name and description for deployment metadata
+- If `docs/research.json` exists, note it's available
 - If `docs/design-system.md` exists, note it's available
 - Scan `src/app/` for pages and `src/components/` for components — summarize what's being shipped so the user has a clear picture of the deployment scope
 - Summarize what you found so the user knows exactly what's going out
@@ -45,6 +45,17 @@ Create a dedicated `/feedback` route:
 - Thank you state after submission
 
 ### After Deploying
+
+**Update project config** (automatic, silent):
+If `docs/project.json` exists, update it with the deployment URL:
+- Preview deploy → set `staging` to the preview URL
+- Production deploy (`--prod`) → set `production` to the production URL
+If `docs/project.json` doesn't exist, create it with `{ "name": null, "repo": null, "staging": null, "production": null, "figma": null }` and populate the relevant URL.
+
+**Update roadmap** (automatic, silent):
+If `docs/roadmap.json` exists, check for any roadmap items with status `in-progress` that correspond to features included in this deployment. Move them to `done` and set their `completed` date to today. Regenerate `src/app/roadmap/page.tsx` if items were updated. Include a brief note: "Roadmap: marked [item titles] as done"
+
+**Then**:
 - Share the live URL
 - Suggest sharing with testers
 - Offer to set up a custom domain via Vercel

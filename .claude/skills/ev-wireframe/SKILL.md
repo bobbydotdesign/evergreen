@@ -12,8 +12,8 @@ The user wants a fast, working prototype — not a polished product. Speed matte
 
 ### Context Detection
 Before asking the user what to wireframe, check for existing project context:
-- If `docs/prd.md` exists, read it — use the product definition, features, and user flows to inform the wireframe
-- If `docs/research.md` exists, read it — incorporate design opportunities and UX patterns
+- If `docs/prd.json` exists, read it — use the product definition, features, and user flows to inform the wireframe
+- If `docs/research.json` exists, read it — incorporate design opportunities and UX patterns
 - If wireframe components already exist in `src/components/wireframe/` or wireframe pages exist, treat this as an iteration — read the existing wireframe pages and components to understand current state before proposing changes
 - If `docs/wireframe-log.md` exists, read it for full iteration history — what was built, feedback received, and direction. Use it to avoid repeating rejected approaches and to build on what the user already approved.
 
@@ -89,6 +89,10 @@ src/components/
 The root layout is a clean minimal shell (fonts + Tailwind, no sidebar or docs UI), so wireframe pages render directly without any framework chrome getting in the way.
 
 ### After Generating
+
+**Step 0: Update roadmap** (automatic, silent)
+
+If `docs/roadmap.json` exists, check if any roadmap items match the screens or features just wireframed (match by title or description). For each matching item that is currently `backlog`, move it to `in-progress` and regenerate `src/app/roadmap/page.tsx`. If items were updated, include a brief note in your output: "Roadmap: moved [item title] to in-progress"
 
 **Step 1: Update wireframe log** (automatic, silent)
 
