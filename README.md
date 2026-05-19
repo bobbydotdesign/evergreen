@@ -10,9 +10,11 @@ Like most things I do, this is an experiment. I'll continue to evolve and suppor
 
 ## What's Inside
 
-- **Claude Code Skills** — `/ev-prd`, `/ev-research`, `/ev-design`, `/ev-wireframe`, `/ev-ship` and more
+- **Claude Code Skills** — `/ev-prd`, `/ev-research`, `/ev-roadmap`, `/ev-design`, `/ev-wireframe`, `/ev-ship` and more
+- **Project Dashboard** — Live project hub at `/evergreen` with status cards, roadmap progress, and project links
+- **HTML-First Docs** — PRD, research, roadmap, and design system render as rich interactive pages, not markdown
 - **Next.js + TypeScript** — App Router, server components by default
-- **Tailwind CSS v4 + shadcn/ui** — Complete design system with light/dark mode
+- **Tailwind CSS v4 + shadcn/ui** — Complete design system with dark mode
 - **Geist Font** — Clean, modern typography from Vercel
 - **Figma MCP Support** — Bidirectional design-to-code workflow
 
@@ -53,6 +55,7 @@ Type `ev-` in Claude Code to see all available skills:
 |-------|-------------|
 | `/ev-prd` | Generate a product requirements document from an idea |
 | `/ev-research` | Competitive analysis and market research |
+| `/ev-roadmap` | Track features and priorities on a visual kanban board |
 | `/ev-design` | Create and refine UI components and pages |
 | `/ev-designsystem` | Configure colors, typography, spacing |
 | `/ev-wireframe` | Rapid low-fi interactive prototypes |
@@ -65,10 +68,32 @@ Type `ev-` in Claude Code to see all available skills:
 
 1. **Define** — Run `/ev-prd` to create a product requirements doc
 2. **Research** — Run `/ev-research` to validate your assumptions
-3. **Prototype** — Run `/ev-wireframe` to quickly build interactive screens
-4. **Foundation** — Run `/ev-designsystem` to set your visual foundation
+3. **Plan** — Run `/ev-roadmap` to break your PRD into trackable items
+4. **Prototype** — Run `/ev-wireframe` to quickly build interactive screens
 5. **Refine** — Run `/ev-design` to polish components and layouts
-6. **Ship** — Run `/ev-ship` to deploy to Vercel and collect feedback
+6. **Foundation** — Run `/ev-designsystem` to set your visual foundation
+7. **Ship** — Run `/ev-ship` to deploy to Vercel and collect feedback
+
+As you work, the roadmap updates automatically — wireframing moves items to in-progress, shipping marks them done.
+
+## Project Dashboard
+
+Visit `/evergreen` in your browser to see your project at a glance:
+
+- **Project summary** pulled from your PRD
+- **What's next** from your roadmap
+- **Status cards** for PRD, research, roadmap, and design system
+- **Project links** — repo, staging, production, Figma
+
+All skill outputs render as rich interactive pages with persistent navigation:
+
+| Page | What it shows |
+|------|--------------|
+| `/evergreen` | Project dashboard |
+| `/prd` | Product requirements with feature cards and priorities |
+| `/research` | Competitive analysis with competitor cards and insight badges |
+| `/roadmap` | Kanban board — backlog, in progress, done |
+| `/design-system` | Live color swatches, type scale, spacing, component samples |
 
 ## Figma Integration
 
@@ -81,10 +106,12 @@ If you have Figma MCP configured, you can:
 
 The project includes a full design system via shadcn/ui:
 
-- **Colors** — Semantic tokens (primary, secondary, muted, accent, destructive) with light/dark mode
+- **Colors** — Semantic tokens (primary, secondary, muted, accent, destructive) with dark mode
 - **Typography** — Geist Sans for UI, Geist Mono for code
 - **Components** — Button, Card, Input, Textarea, Badge, Tabs, Dialog, Sheet, Separator, Skeleton
 - **Spacing & Radius** — Consistent scale via CSS variables
+
+Visit `/design-system` in your browser to see a live visual reference of all tokens and components.
 
 Add more shadcn components anytime:
 
@@ -96,15 +123,24 @@ npx shadcn@latest add [component-name]
 
 ```
 src/
-  app/                 <- Pages and layouts
+  app/
+    evergreen/         <- Project dashboard
+    roadmap/           <- Kanban board
+    prd/               <- Product requirements page
+    research/          <- Research page
+    design-system/     <- Visual design system reference
   components/
     ui/                <- shadcn/ui components
     wireframe/         <- Wireframe components (from /wireframe)
+    project-nav.tsx    <- Persistent navigation
   lib/
     utils.ts           <- Utilities (cn helper)
 docs/
-  prd.md               <- PRD (from /prd)
-  research.md          <- Research (from /research)
+  evergreen.json       <- Content manifest (skills, workflow, stack)
+  project.json         <- Project config (repo, staging, production, figma)
+  prd.json             <- Product requirements (from /ev-prd)
+  research.json        <- Research findings (from /ev-research)
+  roadmap.json         <- Roadmap items (from /ev-roadmap)
 .claude/
   skills/              <- Claude Code skills
   settings.json        <- Evergreen settings (managed by /ev-update)
@@ -112,6 +148,16 @@ CLAUDE.md              <- Project instructions (see Architecture below)
 ```
 
 ## Architecture
+
+### HTML-first docs
+
+Skill outputs use JSON as the data layer and TSX as the presentation layer:
+
+- **JSON files** in `docs/` — structured data that skills read and write
+- **TSX pages** in `src/app/` — rich interactive pages that render the data
+- **No markdown rendering** — pages use shadcn/ui components directly
+
+This means your PRD shows feature cards with priority badges, research shows competitor comparison cards, and the roadmap is a live kanban board — not just formatted text.
 
 ### CLAUDE.md — markers system
 
