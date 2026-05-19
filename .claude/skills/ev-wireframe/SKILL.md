@@ -14,7 +14,7 @@ The user wants a fast, working prototype — not a polished product. Speed matte
 Before asking the user what to wireframe, check for existing project context:
 - If `docs/prd.md` exists, read it — use the product definition, features, and user flows to inform the wireframe
 - If `docs/research.md` exists, read it — incorporate design opportunities and UX patterns
-- If wireframe components already exist in `src/components/wireframe/` or wireframe pages exist, treat this as an iteration
+- If wireframe components already exist in `src/components/wireframe/` or wireframe pages exist, treat this as an iteration — read the existing wireframe pages and components to understand current state before proposing changes
 - If `docs/wireframe-log.md` exists, read it for full iteration history — what was built, feedback received, and direction. Use it to avoid repeating rejected approaches and to build on what the user already approved.
 
 If no argument was provided and no project context exists, ask the generic "What would you like to wireframe?"
