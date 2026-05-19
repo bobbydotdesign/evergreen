@@ -57,7 +57,28 @@ Update the Evergreen skills and configuration from GitHub. Follow these steps ex
    echo "$LATEST_VERSION" > .claude/VERSION
    ```
 
-8. **Update CLAUDE.md (preserve user content)**:
+8. **Install/update dashboard pages and data files**:
+   ```bash
+   # Dashboard pages (framework-managed, always overwritten)
+   cp /tmp/evergreen-update/src/app/evergreen/page.tsx src/app/evergreen/page.tsx
+   mkdir -p src/app/roadmap src/app/prd src/app/research src/app/design-system
+   cp /tmp/evergreen-update/src/app/roadmap/page.tsx src/app/roadmap/page.tsx
+   cp /tmp/evergreen-update/src/app/prd/page.tsx src/app/prd/page.tsx
+   cp /tmp/evergreen-update/src/app/research/page.tsx src/app/research/page.tsx
+   cp /tmp/evergreen-update/src/app/design-system/page.tsx src/app/design-system/page.tsx
+
+   # Shared components (framework-managed)
+   cp /tmp/evergreen-update/src/components/project-nav.tsx src/components/project-nav.tsx
+
+   # Starter data files (only if they don't exist — never overwrite user data)
+   [ ! -f docs/roadmap.json ] && cp /tmp/evergreen-update/docs/roadmap.json docs/roadmap.json
+   [ ! -f docs/prd.json ] && cp /tmp/evergreen-update/docs/prd.json docs/prd.json
+   [ ! -f docs/research.json ] && cp /tmp/evergreen-update/docs/research.json docs/research.json
+   [ ! -f docs/project.json ] && cp /tmp/evergreen-update/docs/project.json docs/project.json
+   [ ! -f docs/evergreen.json ] && cp /tmp/evergreen-update/docs/evergreen.json docs/evergreen.json
+   ```
+
+9. **Update CLAUDE.md (preserve user content)**:
    ```bash
    # Save user content (everything after EVERGREEN:END marker)
    USER_CONTENT=$(sed -n '/<!-- EVERGREEN:END/,$p' CLAUDE.md | tail -n +2)
@@ -69,20 +90,20 @@ Update the Evergreen skills and configuration from GitHub. Follow these steps ex
    echo "$USER_CONTENT" >> CLAUDE.md
    ```
 
-9. **Clean up**:
-   ```bash
-   rm -rf /tmp/evergreen-update .claude/skills.backup .claude/VERSION.backup
-   ```
+10. **Clean up**:
+    ```bash
+    rm -rf /tmp/evergreen-update .claude/skills.backup .claude/VERSION.backup
+    ```
 
-10. **Confirm completion** — Display a clean summary:
+11. **Confirm completion** — Display a clean summary:
    - "Evergreen updated to [version]"
-   - List what was updated (skills, CLAUDE.md, settings, etc.)
-   - Note that user content in CLAUDE.md and settings.local.json were preserved
+   - List what was updated (skills, dashboard pages, CLAUDE.md, settings, etc.)
+   - Note that user content in CLAUDE.md, settings.local.json, and data files (prd.json, research.json, roadmap.json, project.json) were preserved
    - Suggest restarting Claude Code to load the new skills
 
 Important:
 - NEVER touch content below the `<!-- EVERGREEN:END -->` marker — that belongs to the user
-- Only update `.claude/skills/`, `.claude/hooks/`, `.claude/settings.json`, `.claude/VERSION`, and the Evergreen section of `CLAUDE.md`
-- Never touch the user's source code, components, or other project files
-- User settings in `.claude/settings.local.json` are never overwritten
+- Framework-managed files (always overwritten): `.claude/skills/`, `.claude/hooks/`, `.claude/settings.json`, `.claude/VERSION`, Evergreen section of `CLAUDE.md`, dashboard pages (`src/app/evergreen/`, `src/app/roadmap/`, `src/app/prd/`, `src/app/research/`, `src/app/design-system/`), `src/components/project-nav.tsx`
+- User data files (only created if missing, never overwritten): `docs/roadmap.json`, `docs/prd.json`, `docs/research.json`, `docs/project.json`, `docs/evergreen.json`
+- Never touched: user's source code, wireframe/design components, `settings.local.json`
 - If anything fails, restore from the backup and report the error
