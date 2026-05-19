@@ -111,7 +111,7 @@ Read `src/app/roadmap/page.tsx` before regenerating to preserve the current impl
 Run `npm run dev` (skip if already running). Then output:
 
 ```
-Roadmap updated → http://localhost:[port]/roadmap
+Roadmap updated → http://localhost:[port]/ev/roadmap
 
 Items: X backlog · Y in progress · Z done
 

@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { existsSync } from "fs";
 import { join } from "path";
-import { ProjectNav } from "@/components/project-nav";
 import {
   Card,
   CardHeader,
@@ -37,21 +36,18 @@ export default function ResearchPage() {
   const filePath = join(process.cwd(), "docs/research.json");
   if (!existsSync(filePath)) {
     return (
-      <>
-        <ProjectNav active="/research" />
-        <main className="mx-auto max-w-2xl px-6 py-16 sm:py-24">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold tracking-tight">Research</h1>
-            <p className="mt-3 text-sm text-muted-foreground">
-              No research yet. Run{" "}
-              <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">
-                /ev-research
-              </code>{" "}
-              to validate assumptions.
-            </p>
-          </div>
-        </main>
-      </>
+      <main className="mx-auto max-w-2xl px-6 py-16 sm:py-24">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold tracking-tight">Research</h1>
+          <p className="mt-3 text-sm text-muted-foreground">
+            No research yet. Run{" "}
+            <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">
+              /ev-research
+            </code>{" "}
+            to validate assumptions.
+          </p>
+        </div>
+      </main>
     );
   }
 
@@ -59,9 +55,7 @@ export default function ResearchPage() {
   const research: ResearchData = require("@/../docs/research.json");
 
   return (
-    <>
-      <ProjectNav active="/research" />
-      <main className="mx-auto max-w-2xl px-6 py-16 sm:py-24">
+    <main className="mx-auto max-w-2xl px-6 py-16 sm:py-24">
         {/* Header */}
         <div>
           <h1 className="text-2xl font-bold tracking-tight">
@@ -174,7 +168,6 @@ export default function ResearchPage() {
             </div>
           </section>
         )}
-      </main>
-    </>
+    </main>
   );
 }

@@ -15,8 +15,12 @@ src/
   app/
     layout.tsx      <- Root layout (clean shell: fonts + Tailwind, no chrome)
     page.tsx        <- User's app (blank starter)
-    evergreen/      <- Evergreen reference page (reads from docs/evergreen.json)
-    roadmap/        <- Product roadmap kanban board (reads from docs/roadmap.json)
+    ev/             <- Evergreen dashboard and project pages (isolated from user app)
+      page.tsx      <- Project dashboard
+      roadmap/      <- Kanban board
+      prd/          <- Product requirements
+      research/     <- Research findings
+      design-system/<- Visual design system reference
   components/
     ui/             <- shadcn/ui primitives (button, card, input, etc.)
     wireframe/      <- Wireframe-specific components (created by /wireframe)

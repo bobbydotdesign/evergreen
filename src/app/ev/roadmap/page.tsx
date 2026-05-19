@@ -7,7 +7,6 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ProjectNav } from "@/components/project-nav";
 
 export const metadata: Metadata = {
   title: "Roadmap",
@@ -46,8 +45,6 @@ export default function RoadmapPage() {
 
   if (items.length === 0) {
     return (
-      <>
-      <ProjectNav active="/roadmap" />
       <main className="mx-auto max-w-2xl px-6 py-16 sm:py-24">
         <div className="flex flex-col items-center text-center">
           <h1 className="text-2xl font-bold tracking-tight">Roadmap</h1>
@@ -75,13 +72,10 @@ export default function RoadmapPage() {
           </div>
         </div>
       </main>
-      </>
     );
   }
 
   return (
-    <>
-    <ProjectNav active="/roadmap" />
     <main className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
       <div className="mb-12">
         <h1 className="text-2xl font-bold tracking-tight">Roadmap</h1>
@@ -141,6 +135,5 @@ export default function RoadmapPage() {
         })}
       </div>
     </main>
-    </>
   );
 }

@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { existsSync } from "fs";
 import { join } from "path";
-import { ProjectNav } from "@/components/project-nav";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -44,9 +43,7 @@ export default function DesignSystemPage() {
   const hasDoc = existsSync(join(process.cwd(), "docs/design-system.md"));
 
   return (
-    <>
-      <ProjectNav active="/design-system" />
-      <main className="mx-auto max-w-2xl px-6 py-16 sm:py-24">
+    <main className="mx-auto max-w-2xl px-6 py-16 sm:py-24">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Design System</h1>
           <p className="mt-1 text-sm text-muted-foreground">
@@ -215,7 +212,6 @@ export default function DesignSystemPage() {
             </div>
           </div>
         </section>
-      </main>
-    </>
+    </main>
   );
 }

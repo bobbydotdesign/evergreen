@@ -60,12 +60,17 @@ Update the Evergreen skills and configuration from GitHub. Follow these steps ex
 8. **Install/update dashboard pages and data files**:
    ```bash
    # Dashboard pages (framework-managed, always overwritten)
-   cp /tmp/evergreen-update/src/app/evergreen/page.tsx src/app/evergreen/page.tsx
-   mkdir -p src/app/roadmap src/app/prd src/app/research src/app/design-system
-   cp /tmp/evergreen-update/src/app/roadmap/page.tsx src/app/roadmap/page.tsx
-   cp /tmp/evergreen-update/src/app/prd/page.tsx src/app/prd/page.tsx
-   cp /tmp/evergreen-update/src/app/research/page.tsx src/app/research/page.tsx
-   cp /tmp/evergreen-update/src/app/design-system/page.tsx src/app/design-system/page.tsx
+   mkdir -p src/app/ev/roadmap src/app/ev/prd src/app/ev/research src/app/ev/design-system
+   cp /tmp/evergreen-update/src/app/ev/layout.tsx src/app/ev/layout.tsx
+   cp /tmp/evergreen-update/src/app/ev/page.tsx src/app/ev/page.tsx
+   cp /tmp/evergreen-update/src/app/ev/roadmap/page.tsx src/app/ev/roadmap/page.tsx
+   cp /tmp/evergreen-update/src/app/ev/prd/page.tsx src/app/ev/prd/page.tsx
+   cp /tmp/evergreen-update/src/app/ev/research/page.tsx src/app/ev/research/page.tsx
+   cp /tmp/evergreen-update/src/app/ev/design-system/page.tsx src/app/ev/design-system/page.tsx
+
+   # Clean up old page locations (from pre-1.6 installs)
+   rm -f src/app/evergreen/page.tsx src/app/roadmap/page.tsx src/app/prd/page.tsx src/app/research/page.tsx src/app/design-system/page.tsx
+   rmdir src/app/evergreen src/app/roadmap src/app/prd src/app/research src/app/design-system 2>/dev/null
 
    # Shared components (framework-managed)
    cp /tmp/evergreen-update/src/components/project-nav.tsx src/components/project-nav.tsx
@@ -103,7 +108,7 @@ Update the Evergreen skills and configuration from GitHub. Follow these steps ex
 
 Important:
 - NEVER touch content below the `<!-- EVERGREEN:END -->` marker — that belongs to the user
-- Framework-managed files (always overwritten): `.claude/skills/`, `.claude/hooks/`, `.claude/settings.json`, `.claude/VERSION`, Evergreen section of `CLAUDE.md`, dashboard pages (`src/app/evergreen/`, `src/app/roadmap/`, `src/app/prd/`, `src/app/research/`, `src/app/design-system/`), `src/components/project-nav.tsx`
+- Framework-managed files (always overwritten): `.claude/skills/`, `.claude/hooks/`, `.claude/settings.json`, `.claude/VERSION`, Evergreen section of `CLAUDE.md`, dashboard pages (`src/app/ev/`), `src/components/project-nav.tsx`
 - User data files (only created if missing, never overwritten): `docs/roadmap.json`, `docs/prd.json`, `docs/research.json`, `docs/project.json`, `docs/evergreen.json`
 - Never touched: user's source code, wireframe/design components, `settings.local.json`
 - If anything fails, restore from the backup and report the error

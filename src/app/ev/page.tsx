@@ -4,7 +4,6 @@ import { join } from "path";
 import manifest from "@/../docs/evergreen.json";
 import roadmapData from "@/../docs/roadmap.json";
 import projectData from "@/../docs/project.json";
-import { ProjectNav } from "@/components/project-nav";
 import { cn } from "@/lib/utils";
 import {
   Card,
@@ -66,8 +65,6 @@ export default function EvergreenPage() {
     .slice(0, 4);
 
   return (
-    <>
-    <ProjectNav active="/evergreen" />
     <main className="mx-auto max-w-2xl px-6 py-16 sm:py-24">
       {/* Header */}
       <div>
@@ -80,7 +77,7 @@ export default function EvergreenPage() {
               </p>
             )}
             <a
-              href="/prd"
+              href="/ev/prd"
               className="mt-3 inline-block text-xs text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
             >
               View full PRD
@@ -177,7 +174,7 @@ export default function EvergreenPage() {
           </div>
           {items.length > upNext.length && (
             <a
-              href="/roadmap"
+              href="/ev/roadmap"
               className="mt-3 inline-block text-xs text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
             >
               View full roadmap
@@ -190,7 +187,7 @@ export default function EvergreenPage() {
       <div className="mt-8 grid gap-3">
         {/* Roadmap */}
         {items.length > 0 ? (
-          <a href="/roadmap" className="group block">
+          <a href="/ev/roadmap" className="group block">
             <Card size="sm">
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
@@ -248,7 +245,7 @@ export default function EvergreenPage() {
         )}
 
         {/* PRD */}
-        <a href="/prd" className="block">
+        <a href="/ev/prd" className="block">
           <Card size="sm">
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
@@ -274,7 +271,7 @@ export default function EvergreenPage() {
         </a>
 
         {/* Research */}
-        <a href="/research" className="block">
+        <a href="/ev/research" className="block">
           <Card size="sm">
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
@@ -300,7 +297,7 @@ export default function EvergreenPage() {
         </a>
 
         {/* Design System */}
-        <a href="/design-system" className="block">
+        <a href="/ev/design-system" className="block">
           <Card size="sm">
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
@@ -460,6 +457,5 @@ export default function EvergreenPage() {
         </div>
       </footer>
     </main>
-    </>
   );
 }
