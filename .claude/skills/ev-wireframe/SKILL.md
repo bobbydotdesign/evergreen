@@ -31,9 +31,17 @@ When PRD exists but no wireframes yet:
 When wireframes already exist:
 - question: "I see existing wireframes for [screens]. What would you like to do?"
 - options:
-  - label: "Iterate on existing screens", description: "Refine and improve what's already built"
+  - label: "Iterate on existing screens", description: "Rework flows, layout, or screen architecture"
   - label: "Add new screens", description: "Wireframe additional screens or flows"
   - label: "Start fresh", description: "Replace the current wireframes with a new approach"
+
+When the user chooses "Iterate on existing screens", ask a follow-up focused on wireframe-level concerns only (not visual polish):
+- question: "What would you like to improve?"
+- options:
+  - label: "Screen flow", description: "Add, remove, or reorder screens and navigation paths"
+  - label: "Page structure", description: "Rearrange sections, change information hierarchy"
+  - label: "User interactions", description: "Change what happens when users tap/click things"
+  - label: "Content priority", description: "Reorder what's prominent vs. secondary on each screen"
 
 ### Process
 1. **Parse the request** — identify the screens, flows, and key interactions needed (use PRD/research context if available)
@@ -113,13 +121,15 @@ Navigation: [how to move between screens]
 
 **Step 3: Prompt for feedback** (always end with this)
 
+Wireframing is about flows, architecture, and high-level UX — not visual polish. The feedback prompt must reflect that. Do NOT ask about styling, theme tokens, transitions, animations, or visual refinement — those belong in `/ev-design`.
+
 ```
 Review the screens, then tell me what to change:
-- Layout or spacing
-- Content or copy
-- Add/remove sections
-- New screens or flows
-- Interaction changes
+- Screen flow: missing screens, wrong navigation, dead ends
+- Information architecture: what's on each screen, what's grouped together
+- User flow: steps feel wrong, too many clicks, confusing order
+- Key interactions: what happens when you tap/click things
+- Content priority: what's most important on each screen
 
 Run /ev-wireframe again to iterate, or /ev-design when ready for high-fidelity.
 ```
