@@ -21,7 +21,7 @@ Bump the version, tag it, and create a GitHub Release.
 4. Write the new version to `.claude/VERSION`
 5. Commit with message: `Bump version to X.Y.Z`
 6. Push the commit
-7. **Generate release notes** — Run `git log --oneline` from the previous version tag to HEAD. Summarize the changes as bullet points grouped by type (new, improved, fixed).
+7. **Generate release notes** — Run `git log --oneline` from the previous version tag to HEAD. Summarize the changes as bullet points grouped by type (new, improved, fixed). Format for terminal display: use plain text only, no markdown formatting (`**bold**`, `###`, etc.) — these render as raw characters in Claude Code. Use "Label: description" for emphasis instead.
 8. **Create a GitHub Release**:
    ```bash
    gh release create vX.Y.Z --title "vX.Y.Z" --notes "[release notes from step 7]"
