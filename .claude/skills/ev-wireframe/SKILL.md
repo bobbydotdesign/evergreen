@@ -15,6 +15,7 @@ Before asking the user what to wireframe, check for existing project context:
 - If `docs/prd.md` exists, read it — use the product definition, features, and user flows to inform the wireframe
 - If `docs/research.md` exists, read it — incorporate design opportunities and UX patterns
 - If wireframe components already exist in `src/components/wireframe/` or wireframe pages exist, treat this as an iteration
+- If `docs/wireframe-log.md` exists, read it for full iteration history — what was built, feedback received, and direction. Use it to avoid repeating rejected approaches and to build on what the user already approved.
 
 If no argument was provided and no project context exists, ask the generic "What would you like to wireframe?"
 
@@ -39,17 +40,33 @@ When wireframes already exist:
 2. **Generate the prototype** — create pages and components directly in the app
 3. **Keep it fast** — use placeholder content, lorem ipsum is fine, stock icons are fine
 4. **Make it interactive** — basic navigation between screens, form inputs that work, state that updates
-5. **Run the dev server** — offer to start `npm run dev` so they can preview immediately
+5. **Log the iteration** — append an entry to `docs/wireframe-log.md` (create it if it doesn't exist)
 
 ### Wireframe Style Guide
-- Use shadcn/ui components with their default styling — do NOT apply the project's design system, brand colors, or custom theme tokens
-- Do NOT use project-specific classes like `text-evergreen`, brand accents, or custom CSS variables
-- Use `border-2 border-dashed` for placeholder/wireframe containers
-- Use gray background blocks for image placeholders with a label inside
-- Use real text hierarchy (h1, h2, p) but placeholder copy is fine
+
+**Only use shadcn/ui components and Tailwind theme tokens.** This is the single rule — no exceptions unless the user explicitly asks.
+
+Allowed:
+- shadcn/ui components: `<Card>`, `<Button>`, `<Input>`, `<Skeleton>`, `<Dialog>`, `<Tabs>`, `<Badge>`, etc.
+- Tailwind theme tokens: `bg-background`, `bg-card`, `bg-muted`, `text-foreground`, `text-muted-foreground`, `border`, `bg-primary`, `text-primary-foreground`, `bg-secondary`, `text-secondary-foreground`, `bg-accent`, `bg-destructive`
+- Tailwind layout/spacing utilities: `flex`, `grid`, `gap-*`, `p-*`, `m-*`, `w-*`, `h-*`, `rounded-*`, etc.
+- `cn()` from `@/lib/utils` for conditional classes
+
+Banned:
+- Arbitrary Tailwind colors: `bg-gray-200`, `text-slate-500`, `border-zinc-300`, etc.
+- Inline styles, `style` attributes
+- Custom CSS classes, `@apply` blocks, or any CSS overrides
+- Project brand tokens: `text-evergreen`, `--color-evergreen`, or any custom CSS variables
+- Hard-coded color values: `#fff`, `rgb()`, `oklch()`, etc.
+
+Wireframe patterns:
+- Placeholder containers → `<Card className="border-dashed">` with a label inside
+- Image placeholders → `<Skeleton className="w-full h-48" />` with a text overlay
+- Use real text hierarchy (`h1`, `h2`, `p`) but placeholder copy is fine
 - Keep layouts simple — single column on mobile, 2-3 columns on desktop
-- Use shadcn/ui components as-is for interactive elements (buttons, inputs, dialogs, cards)
-- Gray-scale only — no colors unless the user has specified a palette
+- Gray-scale only — the theme tokens provide the right neutral palette automatically
+
+The wireframe should look like a real grayscale app, not a hand-drawn sketch.
 
 ### File Structure
 ```
@@ -64,10 +81,45 @@ src/components/
 The root layout is a clean minimal shell (fonts + Tailwind, no sidebar or docs UI), so wireframe pages render directly without any framework chrome getting in the way.
 
 ### After Generating
-- Start the dev server if not running
-- List all screens created with brief descriptions
-- Offer to:
-  - Iterate on any screen
-  - Convert wireframes to high-fidelity with `/ev-design`
-  - Export to Figma for further design work
-  - Generate a PRD from the prototype with `/ev-prd`
+
+**Step 1: Update wireframe log** (automatic, silent)
+
+Append an entry to `docs/wireframe-log.md` (create if it doesn't exist). Newest entry first (reverse chronological). Format:
+
+```markdown
+## [Date] — [Brief title]
+**Request:** [What user asked for]
+**Generated:** [Screens/components created or changed]
+**Decisions:** [Key layout/structure choices and why]
+**Feedback:** [User feedback that prompted this iteration, or "Initial wireframe"]
+**Open:** [Unresolved items for next round]
+```
+
+Keep each field to 1-3 lines. Be concise.
+
+**Step 2: Preview**
+
+Run `npm run dev` (skip if already running). Then output:
+
+```
+Preview ready → http://localhost:3000
+
+Screens:
+- /           — [description]
+- /[route]    — [description]
+
+Navigation: [how to move between screens]
+```
+
+**Step 3: Prompt for feedback** (always end with this)
+
+```
+Review the screens, then tell me what to change:
+- Layout or spacing
+- Content or copy
+- Add/remove sections
+- New screens or flows
+- Interaction changes
+
+Run /ev-wireframe again to iterate, or /ev-design when ready for high-fidelity.
+```
