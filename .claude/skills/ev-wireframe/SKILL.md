@@ -131,5 +131,7 @@ Review the screens, then tell me what to change:
 - Key interactions: what happens when you tap/click things
 - Content priority: what's most important on each screen
 
-Run /ev-wireframe again to iterate, or /ev-design when ready for high-fidelity.
+Run /ev-wireframe again to iterate.
+
+Happy with the flows? Run /ev-design to move into visual design and polish.
 ```
