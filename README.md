@@ -92,7 +92,7 @@ All skill outputs render as rich interactive pages with persistent navigation. E
 | `/ev` | Project dashboard |
 | `/ev/prd` | Product requirements with feature cards and priorities |
 | `/ev/research` | Competitive analysis with competitor cards and insight badges |
-| `/ev/roadmap` | Kanban board — backlog, in progress, done |
+| `/ev/roadmap` | Interactive kanban board with drag-and-drop, inline editing, and filters |
 | `/ev/design-system` | Live color swatches, type scale, spacing, component samples |
 
 ## Figma Integration
