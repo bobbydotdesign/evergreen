@@ -11,12 +11,14 @@ disable-model-invocation: true
 
 Update the Evergreen skills and configuration from GitHub. Follow these steps exactly:
 
-1. **Fetch the latest release from GitHub Releases**:
+1. **Fetch the latest release from GitHub Releases** — run these as separate commands so the output stays clean:
    ```bash
-   LATEST_JSON=$(curl -sf https://api.github.com/repos/bobbydotdesign/evergreen/releases/latest)
-   LATEST_TAG=$(echo "$LATEST_JSON" | grep '"tag_name"' | sed 's/.*"\(v[^"]*\)".*/\1/')
+   curl -sf https://api.github.com/repos/bobbydotdesign/evergreen/releases/latest -o /tmp/evergreen-release.json
+   ```
+   ```bash
+   LATEST_TAG=$(python3 -c "import json; print(json.load(open('/tmp/evergreen-release.json'))['tag_name'])")
    LATEST_VERSION=$(echo "$LATEST_TAG" | sed 's/^v//')
-   RELEASE_NOTES=$(echo "$LATEST_JSON" | python3 -c "import sys,json; print(json.load(sys.stdin).get('body',''))" 2>/dev/null)
+   RELEASE_NOTES=$(python3 -c "import json; print(json.load(open('/tmp/evergreen-release.json')).get('body',''))" 2>/dev/null)
    echo "Latest: $LATEST_VERSION"
    ```
    You MUST use this GitHub Releases API endpoint. Do NOT fetch `raw.githubusercontent.com/.../VERSION` — that is the wrong source of truth.
