@@ -36,7 +36,7 @@ Update the Evergreen skills and configuration from GitHub. Follow these steps ex
 
 4. **Clone from the release tag** (NOT main):
    ```bash
-   git clone --depth 1 --branch "$LATEST_TAG" https://github.com/bobbydotdesign/evergreen.git /tmp/evergreen-update
+   rm -rf /tmp/evergreen-update /tmp/evergreen-release.json && git clone --depth 1 --branch "$LATEST_TAG" https://github.com/bobbydotdesign/evergreen.git /tmp/evergreen-update
    ```
 
 5. **Back up the current skills**:
