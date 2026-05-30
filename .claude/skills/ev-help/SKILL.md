@@ -30,8 +30,8 @@ Display the following information to the user in a clean, readable format:
 
 1. **Define** — `/ev-prd` to create a product requirements doc
 2. **Research** — `/ev-research` to validate assumptions
-3. **Plan** — `/ev-roadmap` to plan what to build first
-4. **Prototype** — `/ev-wireframe` to quickly build interactive screens
+3. **Prototype** — `/ev-wireframe` to quickly build interactive screens
+4. **Plan** — `/ev-roadmap` to plan what to build first
 5. **Refine** — `/ev-design` to explore the look and polish the UI
 6. **Foundation** — `/ev-designsystem` to formalize the visual system from what emerged
 7. **Ship** — `/ev-ship` to deploy and collect feedback

@@ -87,8 +87,8 @@ When translating from Figma: extract tokens, map to the design system variables,
 ## Workflow
 1. Start with `/ev-prd` to define what you're building
 2. Run `/ev-research` to validate assumptions
-3. Run `/ev-roadmap` to plan what to build first
-4. Use `/ev-wireframe` to quickly prototype screens
+3. Use `/ev-wireframe` to quickly prototype screens
+4. Run `/ev-roadmap` to plan what to build first
 5. Refine with `/ev-design` (and `/ev-figma` when working from Figma files)
 6. Run `/ev-designsystem` to formalize the visual system from what emerged
 7. Deploy with `/ev-ship` when ready for feedback

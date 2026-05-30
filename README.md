@@ -68,8 +68,8 @@ Type `ev-` in Claude Code to see all available skills:
 
 1. **Define** — Run `/ev-prd` to create a product requirements doc
 2. **Research** — Run `/ev-research` to validate your assumptions
-3. **Plan** — Run `/ev-roadmap` to break your PRD into trackable items
-4. **Prototype** — Run `/ev-wireframe` to quickly build interactive screens
+3. **Prototype** — Run `/ev-wireframe` to quickly build interactive screens
+4. **Plan** — Run `/ev-roadmap` to break your PRD into trackable items
 5. **Refine** — Run `/ev-design` to polish components and layouts
 6. **Foundation** — Run `/ev-designsystem` to set your visual foundation
 7. **Ship** — Run `/ev-ship` to deploy to Vercel and collect feedback

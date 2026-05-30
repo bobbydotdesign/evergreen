@@ -56,8 +56,8 @@
   "workflow": [
     { "step": 1, "command": "/ev-prd", "label": "Define what you're building" },
     { "step": 2, "command": "/ev-research", "label": "Validate assumptions" },
-    { "step": 3, "command": "/ev-roadmap", "label": "Plan what to build first" },
-    { "step": 4, "command": "/ev-wireframe", "label": "Quickly prototype screens" },
+    { "step": 3, "command": "/ev-wireframe", "label": "Quickly prototype screens" },
+    { "step": 4, "command": "/ev-roadmap", "label": "Plan what to build first" },
     { "step": 5, "command": "/ev-design", "label": "Refine with high-fidelity design" },
     { "step": 6, "command": "/ev-designsystem", "label": "Formalize the visual system" },
     { "step": 7, "command": "/ev-ship", "label": "Deploy for feedback" }
