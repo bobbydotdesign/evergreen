@@ -186,6 +186,35 @@ This means your project instructions always take priority (last instruction wins
 
 Run `/ev-update` inside Claude Code. It updates only the Evergreen section of `CLAUDE.md`, skills, hooks, and settings — your project instructions and source code are never modified.
 
+## Troubleshooting
+
+### Skills not showing up
+
+If `/ev-` skills don't appear in Claude Code, your `.claude/skills/` directory is likely missing. This can happen when dotfiles don't get copied during setup — for example, when moving cloned files into an existing folder.
+
+Evergreen checks for this automatically: you'll see a warning during `npm install` or when starting a Claude Code session if skills are missing.
+
+**Fix it:**
+
+```bash
+git checkout -- .claude/
+```
+
+This restores all Evergreen framework files (skills, hooks, settings) from git. Then restart Claude Code.
+
+### Skills still missing after fix
+
+If `git checkout` doesn't work (e.g., `.claude/` was never committed), re-copy from the source:
+
+```bash
+git clone https://github.com/bobbydotdesign/evergreen.git /tmp/evergreen
+cp -r /tmp/evergreen/.claude/skills .claude/skills
+cp -r /tmp/evergreen/.claude/hooks .claude/hooks
+cp /tmp/evergreen/.claude/settings.json .claude/settings.json
+cp /tmp/evergreen/.claude/VERSION .claude/VERSION
+rm -rf /tmp/evergreen
+```
+
 ## Contributing
 
 This is an open-source tool for the design community. If you have ideas, improvements, or want to share how you're using it — I'd love to hear from you. Feel free to open an issue or PR.

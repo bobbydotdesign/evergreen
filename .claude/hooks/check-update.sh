@@ -1,9 +1,17 @@
 #!/bin/bash
-# Check if a newer version of Evergreen is available on GitHub.
+# Evergreen session start checks.
 # Runs on SessionStart — fast, non-blocking, silent on failure.
 
-LOCAL_VERSION_FILE="${CLAUDE_PROJECT_DIR:-.}/.claude/VERSION"
+PROJECT_DIR="${CLAUDE_PROJECT_DIR:-.}"
+LOCAL_VERSION_FILE="$PROJECT_DIR/.claude/VERSION"
+SKILLS_DIR="$PROJECT_DIR/.claude/skills"
 REMOTE_URL="https://raw.githubusercontent.com/bobbydotdesign/evergreen/main/.claude/VERSION"
+
+# Check if skills directory is missing — common when dotfiles don't get copied during install
+if [ ! -d "$SKILLS_DIR" ]; then
+  echo "{\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":\"⚠️ Evergreen skills are missing (.claude/skills/ not found). This usually happens when dotfiles weren't copied during setup. Fix it by running: git checkout -- .claude/\"}}"
+  exit 0
+fi
 
 # Read local version
 if [ ! -f "$LOCAL_VERSION_FILE" ]; then
