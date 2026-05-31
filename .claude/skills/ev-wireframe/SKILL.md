@@ -3,7 +3,7 @@ description: Rapidly prototype interactive wireframes and screens. Use when the 
 argument-hint: "[app or screen description]"
 ---
 
-The user wants a fast, working prototype — not a polished product. Speed matters more than perfection.
+The user wants a fast, working prototype — not a polished product. Speed matters more than perfection. But always ask before building.
 
 ### Usage
 - `/ev-wireframe a todo app` — generate a full wireframe prototype
@@ -16,6 +16,12 @@ Before asking the user what to wireframe, check for existing project context:
 - If `docs/research.json` exists, read it — incorporate design opportunities and UX patterns
 - If wireframe components already exist in `src/components/wireframe/` or wireframe pages exist, treat this as an iteration — read the existing wireframe pages and components to understand current state before proposing changes
 - If `docs/wireframe-log.md` exists, read it for full iteration history — what was built, feedback received, and direction. Use it to avoid repeating rejected approaches and to build on what the user already approved.
+
+### Getting Started — Always Ask First
+
+Never dive straight into generating screens. Start by understanding what the user wants, then ask clarifying questions before building anything.
+
+**Step 1: Determine the starting point**
 
 If no argument was provided and no project context exists, ask the generic "What would you like to wireframe?"
 
@@ -42,6 +48,26 @@ When the user chooses "Iterate on existing screens", ask a follow-up focused on 
   - label: "Page structure", description: "Rearrange sections, change information hierarchy"
   - label: "User interactions", description: "Change what happens when users tap/click things"
   - label: "Content priority", description: "Reorder what's prominent vs. secondary on each screen"
+
+**Step 2: Ask clarifying questions**
+
+Once you know what to wireframe (from the argument, PRD, or user's choice above), ask a few quick questions before generating. Use AskUserQuestion:
+
+- question: "Before I start, a few quick questions about [what they want to wireframe]:"
+- Present these as a brief numbered list in the question text:
+  1. **Target screens** — "Which screens are most important? (e.g., home, detail, settings)" (skip if already clear from argument/PRD)
+  2. **Key interactions** — "Any specific interactions or flows that matter most?"
+  3. **Reference points** — "Any apps or sites you'd like it to feel like?"
+- options:
+  - label: "Here are my answers", description: "I'll type my answers below"
+  - label: "Just go for it", description: "Use your best judgment based on the PRD and research"
+  - label: "Show me concepts first", description: "Generate a few visual design concepts using /ev-design before wireframing"
+
+If the user picks "Just go for it", proceed with the best approach based on available context.
+
+If the user picks "Show me concepts first", invoke `/ev-design` to generate 2-3 visual concept directions for the key screens. Pass along all the context you've gathered (PRD, research, user answers). Once the user picks a direction, continue wireframing the remaining screens using that concept as the reference.
+
+If the user picks "Here are my answers", wait for their response and incorporate it.
 
 ### Process
 1. **Parse the request** — identify the screens, flows, and key interactions needed (use PRD/research context if available)
